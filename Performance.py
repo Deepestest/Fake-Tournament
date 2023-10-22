@@ -3,7 +3,7 @@ from typing import Any
 import csv
 import json
 class Robot:
-    def __init__(self, HCO, HCOV, HCU, HCUV, MCO, MCOV, MCU, MCUV, LP, LPV):
+    def __init__(self, team, HCO, HCOV, HCU, HCUV, MCO, MCOV, MCU, MCUV, LP, LPV):
         self.HCO = HCO
         self.HCOV = HCOV
         self.HCU = HCU
@@ -14,69 +14,93 @@ class Robot:
         self.MCUV = MCUV
         self.LP = LP
         self.LPV = LPV
+        self.team = team
+    def getTeam(self) -> int:
+        return self.team
+    def getHCO(self) -> int:
+        return self.HCO
+    def getHCOV(self) -> int:
+        return self.HCOV
+    def getHCU(self) -> int:
+        return self.HCU
+    def getHCUV(self) -> int:
+        return self.HCUV
+    def getMCO(self) -> int:
+        return self.MCO
+    def getMCOV(self) -> int:
+        return self.MCOV
+    def getMCU(self) -> int:
+        return self.MCU
+    def getMCUV(self) -> int:
+        return self.MCUV
+    def getLP(self) -> int:
+        return self.LP
+    def getLPV(self) -> int:
+        return self.LPV
 
 class LowCube(Robot):
-    def __init__(self):
-        Robot.__init__(self, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2)
 
 class Cube(Robot):
-    def __init__(self):
-        Robot.__init__(self, 0, 0, 1, 1, 0, 0, 1, 1, 5, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 0, 0, 1, 1, 0, 0, 1, 1, 5, 2)
 
 class BadCone(Robot):
-    def __init__(self):
-        Robot.__init__(self, 2, 2, 0, 0, 3, 1, 0, 0, 0, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 2, 2, 0, 0, 3, 1, 0, 0, 0, 2)
 
 class GoodCone(Robot):
-    def __init__(self):
-        Robot.__init__(self, 5, 1, 0, 0, 4, 1, 0, 0, 0, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 5, 1, 0, 0, 4, 1, 0, 0, 0, 2)
 
 class GodBot(Robot):
-    def __init__(self):
-        Robot.__init__(self, 4, 1, 2, 1, 2, 1, 1, 1, 2, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 4, 1, 2, 1, 2, 1, 1, 1, 2, 2)
 
 class NoHigh(Robot):
-    def __init__(self):
-        Robot.__init__(self, 0, 0, 0, 0, 4, 1, 2, 1, 2, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 0, 0, 0, 0, 4, 1, 2, 1, 2, 2)
 
 class NoHighCones(Robot):
-    def __init__(self):
-        Robot.__init__(self, 0, 0, 2, 1, 3, 1, 1, 1, 2, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 0, 0, 2, 1, 3, 1, 1, 1, 2, 2)
 
 class DefenseBot(Robot):
-    def __init__(self):
-        Robot.__init__(self, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2)
 
 class Okay(Robot):
-    def __init__(self):
-        Robot.__init__(self, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2)
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2)
 
 class Bad(Robot):
-    def __init__(self):
-        Robot.__init__(self, 0, 1, 0, 1, 0, 1, 0, 1, 3, 2)
-def randomRobot() -> Robot:
+    def __init__(self, team:int):
+        Robot.__init__(self, team, 0, 1, 0, 1, 0, 1, 0, 1, 3, 2)
+
+def randomRobot(team:int) -> Robot:
     num = random.randint(1, 10)
     match num:
         case 1:
-            return LowCube
+            return LowCube(team)
         case 2:
-            return Cube
+            return Cube(team)
         case 3:
-            return BadCone
+            return BadCone(team)
         case 4:
-            return GoodCone
+            return GoodCone(team)
         case 5:
-            return GodBot
+            return GodBot(team)
         case 6:
-            return NoHigh
+            return NoHigh(team)
         case 7:
-            return NoHighCones
+            return NoHighCones(team)
         case 8:
-            return DefenseBot
+            return DefenseBot(team)
         case 9:
-            return Okay
+            return Okay(team)
         case 10:
-            return Bad
+            return Bad(team)
 
 with open("Teams.csv", newline='') as csvfile:
     reader = csv.DictReader(csvfile)
@@ -84,9 +108,11 @@ with open("Teams.csv", newline='') as csvfile:
     for row in reader:
         numTeams+=1
     robots = Robot[numTeams]
+    teamNumber = 0
     for row in reader:
         team = row['Team']
-        robots[team] = randomRobot()
+        robots[teamNumber] = randomRobot(team)
+        teamNumber +=1
 matchesJson = []
 with open("Matches.csv", newline='') as csvfile:
     matchReader = csv.DictReader(csvfile)
@@ -94,17 +120,38 @@ numMatches = 0
 for row in matchReader:
     numMatches+=1
 for row in matchReader:
+    matchRobots = Robot[6]
+    r1 = row["R1"]
+    r2 = row["R2"]
+    r3 = row["R3"]
+    b1 = row["B1"]
+    b2 = row["B2"]
+    b3 = row["B3"]
+    for robot in robots:
+        if robot.getTeam() == r1:
+            matchRobots[0] = robot
+        elif robot.getTeam() == r2:
+            matchRobots[1] = robot
+        elif robot.getTeam() == r3:
+            matchRobots[2] = robot
+        elif robot.getTeam() == b1:
+            matchRobots[3] = robot
+        elif robot.getTeam() == b2:
+            matchRobots[4] = robot
+        elif robot.getTeam() == b3:
+            matchRobots[5] = robot
+    matchNumber = row["Match Number"]
     matchJson = {
-        "actual_time": 1697410390,
+        "actual_time": 0,
         "alliances": {
             "blue": {
                 "dq_team_keys": [],
                 "score": 153,
                 "surrogate_team_keys": [],
                 "team_keys": [
-                    "frc1410",
-                    "frc4944",
-                    "frc9992"
+                    "frc"+b1,
+                    "frc"+b2,
+                    "frc"+b3
                 ]
             },
             "red": {
@@ -112,21 +159,21 @@ for row in matchReader:
                 "score": 181,
                 "surrogate_team_keys": [],
                 "team_keys": [
-                    "frc1619",
-                    "frc3374",    
-                    "frc4499"
+                    "frc"+r1,
+                    "frc"+r2,    
+                    "frc"+r3
                 ]
             }
         },
         "comp_level": "f",
-        "event_key": "2023cokc",
-        "key": "2023cokc_f1m1",
-        "match_number": 1,
-        "post_result_time": 1697410681,
-        "predicted_time": 1697410635,
+        "event_key": "2023fake",
+        "key": "2023fake_f1m"+matchNumber,
+        "match_number": matchNumber,
+        "post_result_time": 0,
+        "predicted_time": 0,
         "score_breakdown": {
             "blue": {
-                "activationBonusAchieved": false,
+                "activationBonusAchieved": False,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
