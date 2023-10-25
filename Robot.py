@@ -100,17 +100,27 @@ class Robot:
         return self.LCUV
     def getAutos(self) -> Autos:
         return self.autos
+    def getAutoEngagePercent(self) -> float:
+        return self.autos.getMiddle().engagePercent
+    def getAutoDockPercent(self) -> float:
+        return self.autos.getMiddle().dockPercent
     def getAutoDock(self) -> int:
-        return max(self.autos.getBump().engagePercent, self.autos.getFeeder().engagePercent, self.autos.getMiddle().engagePercent)
+        rand = random.random()
+        retval = 0
+        if rand < self.getAutoEngagePercent():
+            retval = 12
+        elif rand < self.getAutoDockPercent():
+            retval = 8
+        return retval
     
 class LowCube(Robot):
     def __init__(self, team:int):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 4, 0.2, 0.7, 3), OnePiece("Cube", 0, 4, 0.2, 0.7, 0), OnePiece("Cube", 0, 4, 0, 0, 0)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 0, 0, 0, 0), OnePiece("Cube", 0, 0, 0, 0, 3), TwoPiece(["Cube", "Cube"], [0, 0], [0, 1], 0, 0), TwoPiece(["Cube", "Cube"], [0, 0], [0, 1], 0.1, 0.5), ThreePiece(["Cube", "Cube", "Cube"], [0, 0, 0], [0, 1, 2], 0, 0)])
+        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 0, 0, 0, 0), OnePiece("Cube", 0, 0, 0, 0, 3), TwoPiece(["Cube", "Cube"], [0, 0], [0, 1], 0, 0), ThreePiece(["Cube", "Cube", "Cube"], [0, 0, 0], [0, 1, 2], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 8, 0, 0, 0), OnePiece("Cube", 0, 8, 0, 0, 3), TwoPiece(["Cube", "Cube"], [0, 0], [7, 8], 0, 0), TwoPiece(["Cube", "Cube"], [0, 0], [0, 0], 0.1, 0.5), ThreePiece(["Cube", "Cube", "Cube"], [0, 0, 0], [6, 7, 8], 0, 0)])
+        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 8, 0, 0, 0), OnePiece("Cube", 0, 8, 0, 0, 3), TwoPiece(["Cube", "Cube"], [0, 0], [7, 8], 0, 0), ThreePiece(["Cube", "Cube", "Cube"], [0, 0, 0], [6, 7, 8], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2, autos)
 
@@ -119,9 +129,9 @@ class Cube(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 4, 0.2, 0.7, 3), OnePiece("Cube", 0, 4, 0.2, 0.7, 0), OnePiece("Cube", 0, 4, 0, 0, 0), OnePiece("Cube", 1, 4, 0.2, 0.7, 3), OnePiece("Cube", 1, 4, 0.2, 0.7, 0), OnePiece("Cube", 1, 4, 0, 0, 0), OnePiece("Cube", 2, 4, 0.2, 0.7, 3), OnePiece("Cube", 2, 4, 0.2, 0.7, 0), OnePiece("Cube", 2, 4, 0, 0, 0)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 2, 1, 0, 0, 0), OnePiece("Cube", 2, 1, 0, 0, 3), TwoPiece(["Cube", "Cube"], [0, 2], [0, 1], 0, 0), TwoPiece(["Cube", "Cube"], [0, 2], [0, 1], 0.1, 0.5), ThreePiece(["Cube", "Cube", "Cube"], [0, 2, 0], [0, 1, 2], 0, 0)])
+        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 2, 1, 0, 0, 0), OnePiece("Cube", 2, 1, 0, 0, 3), TwoPiece(["Cube", "Cube"], [0, 2], [0, 1], 0, 0), ThreePiece(["Cube", "Cube", "Cube"], [0, 2, 0], [0, 1, 2], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 2, 7, 0, 0, 0), OnePiece("Cube", 2, 7, 0, 0, 3), TwoPiece(["Cube", "Cube"], [2, 0], [7, 8], 0, 0), TwoPiece(["Cube", "Cube"], [2, 0], [7, 8], 0.1, 0.5), ThreePiece(["Cube", "Cube", "Cube"], [0, 2, 0], [6, 7, 8], 0, 0)])
+        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 2, 7, 0, 0, 0), OnePiece("Cube", 2, 7, 0, 0, 3), TwoPiece(["Cube", "Cube"], [2, 0], [7, 8], 0, 0), ThreePiece(["Cube", "Cube", "Cube"], [0, 2, 0], [6, 7, 8], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 5, 2, autos)
 
@@ -130,9 +140,9 @@ class BadCone(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([NoAuto(), OnePiece("Cone", 1, 3, 0.2, 0.7, 3), OnePiece("Cone", 1, 3, 0.2, 0.7, 0), OnePiece("Cone", 1, 3, 0, 0, 0)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cone", 0, 0, 0, 0, 0), OnePiece("Cone", 0, 0, 0, 0, 3), TwoPiece(["Cone", "Cone"], [0, 1], [0, 0], 0, 0), TwoPiece(["Cone", "Cone"], [0, 1], [0, 0], 0.1, 0.5), ThreePiece(["Cone", "Cone", "Cone"], [0, 1, 2], [0, 0, 0], 0, 0)])
+        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cone", 0, 0, 0, 0, 0), OnePiece("Cone", 0, 0, 0, 0, 3), TwoPiece(["Cone", "Cone"], [0, 1], [0, 0], 0, 0), ThreePiece(["Cone", "Cone", "Cone"], [0, 1, 2], [0, 0, 0], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cone", 0, 8, 0, 0, 0), OnePiece("Cone", 0, 8, 0, 0, 3), TwoPiece(["Cone", "Cone"], [0, 1], [8, 8], 0, 0), TwoPiece(["Cone", "Cone"], [0, 1], [8, 8], 0.1, 0.5), ThreePiece(["Cone", "Cone", "Cone"], [0, 1, 2], [8, 8, 8], 0, 0)])
+        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cone", 0, 8, 0, 0, 0), OnePiece("Cone", 0, 8, 0, 0, 3), TwoPiece(["Cone", "Cone"], [0, 1], [8, 8], 0, 0), ThreePiece(["Cone", "Cone", "Cone"], [0, 1, 2], [8, 8, 8], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 2, 2, 0, 0, 3, 1, 0, 0, 0, 2, 0, 0, autos)
 
@@ -141,9 +151,9 @@ class GoodCone(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([OnePiece("Cone", 2, 3, 0.1, 0.8, 3), OnePiece("Cone", 2, 3, 0.1, 0.8, 0), OnePiece("Cone", 2, 3, 0, 0, 0)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([TwoPiece(["Cone", "Cone"], [2, 1], [0, 0], 0, 0), TwoPiece(["Cone", "Cone"], [2, 1], [0, 0], 0.1, 0.5), ThreePiece(["Cone", "Cone", "Cone"], [2, 1, 2], [2, 0, 0], 0, 0)])
+        feederAuto = getRandomAuto([TwoPiece(["Cone", "Cone"], [2, 1], [0, 0], 0, 0), ThreePiece(["Cone", "Cone", "Cone"], [2, 1, 2], [2, 0, 0], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([TwoPiece(["Cone", "Cone"], [2, 1], [8, 8], 0, 0), TwoPiece(["Cone", "Cone"], [2, 1], [8, 8], 0.1, 0.5), ThreePiece(["Cone", "Cone", "Cone"], [2, 1, 2], [6, 8, 8], 0, 0)])
+        bumpAuto = getRandomAuto([TwoPiece(["Cone", "Cone"], [2, 1], [8, 8], 0, 0), ThreePiece(["Cone", "Cone", "Cone"], [2, 1, 2], [6, 8, 8], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 5, 1, 0, 0, 4, 1, 0, 0, 0, 2, 0, 0, autos)
 
@@ -152,9 +162,9 @@ class GodBot(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([OnePiece("Cube", 2, 4, 0.1, 0.9, 3)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([TwoPiece(["Cone", "Cube"], [2, 2], [0, 1], 0.2, 0.7), ThreePiece(["Cone", "Cube", "Cone"], [2, 2, 2], [2, 1, 0], 0, 0)])
+        feederAuto = getRandomAuto([ThreePiece(["Cone", "Cube", "Cone"], [2, 2, 2], [2, 1, 0], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([TwoPiece(["Cone", "Cube"], [2, 2], [8, 7], 0.2, 0.7), ThreePiece(["Cone", "Cube", "Cone"], [2, 2, 2], [6, 7, 8], 0, 0)])
+        bumpAuto = getRandomAuto([ThreePiece(["Cone", "Cube", "Cone"], [2, 2, 2], [6, 7, 8], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 4, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, autos)
 
@@ -163,9 +173,9 @@ class NoHigh(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([NoAuto(), OnePiece("Cone", 1, 3, 0.1, 0.8, 3), OnePiece("Cone", 1, 3, 0.1, 0.8, 0), OnePiece("Cone", 1, 3, 0, 0, 0)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 1], [0, 1], 0, 0), TwoPiece(["Cone", "Cube"], [1, 1], [0, 1], 0.1, 0.5)])
+        feederAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 1], [0, 1], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 1], [8, 7], 0, 0), TwoPiece(["Cone", "Cube"], [1, 1], [8, 7], 0.1, 0.5)])
+        bumpAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 1], [8, 7], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 0, 0, 0, 0, 4, 1, 2, 1, 1, 1, 1, 1, autos)
 
@@ -174,9 +184,9 @@ class NoHighCones(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([NoAuto(), OnePiece("Cone", 1, 3, 0.1, 0.8, 3), OnePiece("Cone", 1, 3, 0.1, 0.8, 0), OnePiece("Cone", 1, 3, 0, 0, 0)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 2], [0, 1], 0, 0), TwoPiece(["Cone", "Cube"], [1, 2], [0, 1], 0.1, 0.5)])
+        feederAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 2], [0, 1], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 2], [8, 7], 0, 0), TwoPiece(["Cone", "Cube"], [1, 2], [8, 7], 0.1, 0.5)])
+        bumpAuto = getRandomAuto([NoAuto(), TwoPiece(["Cone", "Cube"], [1, 2], [8, 7], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 0, 0, 2, 1, 3, 1, 1, 1, 1, 1, 1, 1, autos)
 
@@ -185,9 +195,9 @@ class DefenseBot(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 4, 0.1, 0.8, 3), OnePiece("Cube", 0, 4, 0.1, 0.8, 0), OnePiece("Cube", 0, 4, 0, 0, 0)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 0, 0.1, 0.5, 3), OnePiece("Cube", 0, 0, 0.1, 0.5, 0), OnePiece("Cube", 0, 0, 0, 0, 0), OnePiece("Cube", 0, 0, 0, 0, 3)])
+        feederAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 0, 0, 0, 0), OnePiece("Cube", 0, 0, 0, 0, 3)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 8, 0.1, 0.5, 3), OnePiece("Cube", 0, 8, 0.1, 0.5, 0), OnePiece("Cube", 0, 8, 0, 0, 0), OnePiece("Cube", 0, 8, 0, 0, 3)])
+        bumpAuto = getRandomAuto([NoAuto(), OnePiece("Cube", 0, 8, 0, 0, 0), OnePiece("Cube", 0, 8, 0, 0, 3)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, autos)
 
@@ -196,9 +206,9 @@ class Okay(Robot):
         # Randomizing Middle Auto
         middleAuto = getRandomAuto([OnePiece("Cube", 1, 4, 0.2, 0.7, 3)])
         # Randomizing Feeder Auto
-        feederAuto = getRandomAuto([TwoPiece(["Cone", "Cube"], [1, 1], [0, 1], 0, 0), TwoPiece(["Cone", "Cube"], [1, 1], [0, 1], 0.1, 0.5), ThreePiece(["Cone", "Cube", "Cone"], [1, 1, 1], [2, 1, 0], 0, 0)])
+        feederAuto = getRandomAuto([TwoPiece(["Cone", "Cube"], [1, 1], [0, 1], 0, 0), ThreePiece(["Cone", "Cube", "Cone"], [1, 1, 1], [2, 1, 0], 0, 0)])
         # Randomizing Bump Auto
-        bumpAuto = getRandomAuto([TwoPiece(["Cone", "Cube"], [1, 1], [8, 7], 0, 0), TwoPiece(["Cone", "Cube"], [1, 1], [8, 7], 0.1, 0.5), ThreePiece(["Cone", "Cube", "Cone"], [1, 1, 1], [6, 7, 8], 0, 0)])
+        bumpAuto = getRandomAuto([TwoPiece(["Cone", "Cube"], [1, 1], [8, 7], 0, 0), ThreePiece(["Cone", "Cube", "Cone"], [1, 1, 1], [6, 7, 8], 0, 0)])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, autos)
 
@@ -236,17 +246,18 @@ def randomRobot(team:int) -> Robot:
             return Okay(team)
         case 10:
             return Bad(team)
+        
 def dockingAutoRobots(bots:list) -> list:
     retval = ["", ""]
-    if (bots[0].getAutoDock()>=bots[1].getAutoDock()&bots[0].getAutoDock()>=bots[2].getAutoDock()):
+    if (bots[0].getAutoEngagePercent()>=bots[1].getAutoEngagePercent()&bots[0].getAutoEngagePercent()>=bots[2].getAutoEngagePercent()):
         retval[0] = "r1"
-    elif(bots[1].getAutoDock()>=bots[2].getAutoDock()):
+    elif(bots[1].getAutoEngagePercent()>=bots[2].getAutoEngagePercent()):
         retval[0] = "r2"
     else:
         retval[0] = "r3"
-    if (bots[3].getAutoDock()>=bots[4].getAutoDock()&bots[3].getAutoDock()>=bots[5].getAutoDock()):
+    if (bots[3].getAutoEngagePercent()>=bots[4].getAutoEngagePercent()&bots[3].getAutoEngagePercent()>=bots[5].getAutoEngagePercent()):
         retval[1] = "b1"
-    elif(bots[4].getAutoDock()>=bots[5].getAutoDock()):
+    elif(bots[4].getAutoEngagePercent()>=bots[5].getAutoEngagePercent()):
         retval[1] = "b2"
     else:
         retval[1] = "b3"
