@@ -79,7 +79,7 @@
             "autoPoints": 0,
             "coopGamePieceCount": 0,
             "coopertitionCriteriaMet": false,
-            "endGameBridgeState": "",
+            "endGameBridgeState": "Level",
             "endGameChargeStationPoints": 0,
             "endGameChargeStationRobot1": "None",
             "endGameChargeStationRobot2": "None",
