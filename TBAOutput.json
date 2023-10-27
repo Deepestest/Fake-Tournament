@@ -35,8 +35,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -51,19 +51,19 @@
                         "None"
                     ],
                     "M": [
+                        "Coneb1",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cubeb2",
                         "None"
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
@@ -80,7 +80,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -143,11 +143,11 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -161,8 +161,8 @@
                         "None"
                     ],
                     "M": [
-                        "None",
-                        "None",
+                        "Coner3",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -175,7 +175,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Coner4",
                         "None",
                         "None",
                         "None",
@@ -291,15 +291,15 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
-                        "None",
-                        "None",
+                        "Cubeb1",
+                        "Cubeb1",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
@@ -330,14 +330,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -401,13 +401,13 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -437,10 +437,10 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -549,8 +549,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -594,7 +594,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -657,10 +657,10 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
-                "autoChargeStationRobot1": "Docked",
-                "autoChargeStationRobot2": "None",
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -683,7 +683,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ],
                     "T": [
                         "None",
@@ -694,7 +694,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ]
                 },
                 "autoDocked": true,
@@ -805,9 +805,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -819,7 +819,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cubeb1"
                     ],
                     "M": [
                         "None",
@@ -833,25 +833,25 @@
                         "None"
                     ],
                     "T": [
+                        "Coneb2",
+                        "Cubeb2",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Cubeb1",
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -915,9 +915,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -932,8 +932,8 @@
                         "None"
                     ],
                     "M": [
-                        "None",
-                        "None",
+                        "Coner2",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -954,7 +954,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -1096,7 +1096,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Coneb2",
                         "None",
                         "None"
                     ]
@@ -1108,7 +1108,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -1171,13 +1171,14 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoBridgeState": "NotLevel",
+                "autoChargeStationPoints": 8,
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -1185,14 +1186,13 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None"
+                        "Cuber3"
                     ],
                     "M": [
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Coner1",
                         "None",
                         "None",
                         "None",
@@ -1207,7 +1207,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cuber3",
                         "None"
                     ]
                 },
@@ -1365,7 +1365,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -1428,10 +1428,10 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoBridgeState": "NotLevel",
+                "autoChargeStationPoints": 8,
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -1446,14 +1446,14 @@
                         "None"
                     ],
                     "M": [
+                        "Coner3",
+                        "Cuber3",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Coner2",
+                        "Cuber2",
                         "None"
                     ],
                     "T": [
@@ -1577,9 +1577,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -1605,7 +1605,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cubeb3",
                         "None",
                         "None",
                         "None",
@@ -1622,7 +1622,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -1703,7 +1703,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
@@ -1715,7 +1715,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -1833,9 +1833,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -1861,10 +1861,10 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
+                        "Coneb2",
+                        "Coneb3",
                         "None",
                         "None",
                         "None",
@@ -1872,14 +1872,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -1953,7 +1953,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -1971,9 +1971,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coner2",
+                        "Cuber2",
+                        "Coner2",
                         "None",
                         "None",
                         "None",
@@ -2090,12 +2090,13 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -2103,8 +2104,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None"
+                        "Cubeb3"
                     ],
                     "M": [
                         "None",
@@ -2129,14 +2129,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -2200,9 +2200,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
+                "autoChargeStationPoints": 0,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -2239,7 +2239,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -2347,13 +2347,13 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -2376,24 +2376,24 @@
                     ],
                     "T": [
                         "None",
+                        "Cubeb2",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -2459,11 +2459,11 @@
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber1",
                         "None",
                         "None",
                         "None",
@@ -2482,7 +2482,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ],
                     "T": [
                         "None",
@@ -2603,11 +2603,11 @@
             "blue": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
-                "autoChargeStationRobot1": "Docked",
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -2625,7 +2625,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cubeb4",
                         "None",
                         "None",
                         "None",
@@ -2650,7 +2650,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -2716,8 +2716,8 @@
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -2743,7 +2743,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber1",
                         "None",
                         "None",
                         "None",
@@ -2861,8 +2861,8 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
@@ -2900,14 +2900,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -2972,8 +2972,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -2988,6 +2988,7 @@
                         "None"
                     ],
                     "M": [
+                        "Coner2",
                         "None",
                         "None",
                         "None",
@@ -2995,19 +2996,18 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None"
+                        "Coner3"
                     ],
                     "T": [
                         "None",
+                        "Cuber2",
+                        "None",
+                        "Coner1",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Coner3"
                     ]
                 },
                 "autoDocked": true,
@@ -3135,9 +3135,9 @@
                         "None"
                     ],
                     "M": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -3152,9 +3152,9 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Coneb3",
+                        "Cubeb3",
+                        "Coneb3"
                     ]
                 },
                 "autoDocked": true,
@@ -3164,7 +3164,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -3228,9 +3228,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -3242,11 +3242,11 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cuber1"
                     ],
                     "M": [
-                        "None",
-                        "None",
+                        "Coner2",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -3267,7 +3267,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -3376,9 +3376,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -3389,11 +3389,11 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coneb3"
                     ],
                     "M": [
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -3421,7 +3421,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -3485,13 +3485,13 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationPoints": 0,
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -3510,21 +3510,21 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner3"
                     ],
                     "T": [
                         "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cuber3",
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -3633,9 +3633,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -3657,12 +3657,12 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coneb2"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb3",
+                        "Cubeb3",
+                        "Coneb3",
                         "None",
                         "None",
                         "None",
@@ -3678,7 +3678,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -3752,7 +3752,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cuber4",
                         "None",
                         "None",
                         "None",
@@ -3770,14 +3770,14 @@
                         "None"
                     ],
                     "T": [
+                        "Coner3",
+                        "Cuber3",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Cuber2",
                         "None"
                     ]
                 },
@@ -3889,9 +3889,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -3906,15 +3906,15 @@
                         "None"
                     ],
                     "M": [
+                        "Coneb1",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Coneb2"
                     ],
                     "T": [
                         "None",
@@ -3928,14 +3928,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -3999,12 +3999,13 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -4012,8 +4013,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None"
+                        "Cuber3"
                     ],
                     "M": [
                         "None",
@@ -4038,7 +4038,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -4146,9 +4146,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -4175,7 +4175,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
@@ -4185,14 +4185,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -4257,9 +4257,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -4284,9 +4284,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coner3",
+                        "Cuber3",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
@@ -4402,10 +4402,10 @@
             "blue": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -4417,10 +4417,10 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cubeb3"
                     ],
                     "M": [
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -4432,7 +4432,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -4449,7 +4449,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -4513,10 +4513,10 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
+                "autoChargeStationPoints": 0,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -4549,10 +4549,10 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -4661,9 +4661,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -4677,7 +4677,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -4688,9 +4688,9 @@
                         "None"
                     ],
                     "T": [
+                        "Coneb2",
                         "None",
-                        "None",
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -4706,7 +4706,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -4770,17 +4770,17 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationPoints": 0,
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cuber4",
                         "None",
                         "None",
                         "None",
@@ -4809,7 +4809,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -4918,9 +4918,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -4934,11 +4934,11 @@
                         "None"
                     ],
                     "M": [
+                        "Coneb3",
+                        "Cubeb3",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Cubeb4",
                         "None",
                         "None",
                         "None",
@@ -4963,7 +4963,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -5028,8 +5028,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -5044,7 +5044,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coner1",
                         "None",
                         "None",
                         "None",
@@ -5056,7 +5056,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber1",
                         "None",
                         "None",
                         "None",
@@ -5174,13 +5174,13 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
@@ -5213,14 +5213,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -5284,10 +5284,10 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
+                "autoChargeStationPoints": 0,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -5313,7 +5313,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -5323,7 +5323,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -5432,8 +5432,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -5445,14 +5445,14 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cubeb2"
                     ],
                     "M": [
+                        "Coneb1",
+                        "Cubeb1",
+                        "Coneb1",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Cubeb3",
                         "None",
                         "None",
                         "None",
@@ -5477,7 +5477,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -5558,7 +5558,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coner2",
                         "None",
                         "None",
                         "None",
@@ -5569,9 +5569,9 @@
                         "None"
                     ],
                     "T": [
+                        "Coner2",
                         "None",
-                        "None",
-                        "None",
+                        "Coner2",
                         "None",
                         "None",
                         "None",
@@ -5689,9 +5689,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -5712,7 +5712,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cubeb3",
                         "None"
                     ],
                     "T": [
@@ -5734,7 +5734,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -5799,9 +5799,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -5830,11 +5830,11 @@
                         "None",
                         "None",
                         "None",
+                        "Cuber1",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Cuber3",
+                        "Coner3"
                     ]
                 },
                 "autoDocked": true,
@@ -5946,9 +5946,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -5959,11 +5959,11 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coneb3"
                     ],
                     "M": [
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -5991,7 +5991,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -6057,11 +6057,11 @@
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber1",
                         "None",
                         "None",
                         "None",
@@ -6084,10 +6084,10 @@
                     ],
                     "T": [
                         "None",
+                        "Cuber1",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -6208,7 +6208,7 @@
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
@@ -6248,7 +6248,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -6311,9 +6311,9 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
-                "autoChargeStationRobot1": "None",
+                "autoBridgeState": "NotLevel",
+                "autoChargeStationPoints": 8,
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
@@ -6329,8 +6329,8 @@
                         "None"
                     ],
                     "M": [
-                        "None",
-                        "None",
+                        "Coner3",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -6351,7 +6351,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -6459,13 +6459,13 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
+                "autoChargeStationPoints": 0,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -6498,14 +6498,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -6568,8 +6568,8 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
+                "autoBridgeState": "NotLevel",
+                "autoChargeStationPoints": 8,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
@@ -6597,9 +6597,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coner2",
+                        "Cuber2",
+                        "Coner2",
                         "None",
                         "None",
                         "None",
@@ -6716,10 +6716,10 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -6751,18 +6751,18 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cubeb3",
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -6851,7 +6851,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ],
                     "T": [
                         "None",
@@ -6974,9 +6974,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -6990,7 +6990,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coneb3",
                         "None",
                         "None",
                         "None",
@@ -7002,7 +7002,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cubeb3",
                         "None",
                         "None",
                         "None",
@@ -7019,7 +7019,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -7082,8 +7082,8 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
+                "autoBridgeState": "NotLevel",
+                "autoChargeStationPoints": 8,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
@@ -7100,19 +7100,19 @@
                         "None"
                     ],
                     "M": [
+                        "Coner2",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
+                        "Coner1",
                         "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Coner1"
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -7231,16 +7231,16 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cubeb4",
                         "None",
                         "None",
                         "None",
@@ -7253,8 +7253,8 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Coneb3",
+                        "Cubeb3",
                         "None"
                     ],
                     "T": [
@@ -7276,7 +7276,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -7340,9 +7340,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -7379,7 +7379,7 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -7493,9 +7493,9 @@
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
-                        "None",
-                        "None",
+                        "Cubeb1",
+                        "Cubeb1",
+                        "Cubeb1",
                         "None",
                         "None",
                         "None",
@@ -7521,8 +7521,8 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
                         "None"
                     ]
                 },
@@ -7533,7 +7533,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -7599,8 +7599,8 @@
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -7611,7 +7611,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cuber2"
                     ],
                     "M": [
                         "None",
@@ -7758,7 +7758,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cubeb1"
                     ],
                     "M": [
                         "None",
@@ -7772,9 +7772,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -7790,7 +7790,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -7854,21 +7854,21 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationPoints": 0,
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
+                        "Cuber2",
                         "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Cuber2"
                     ],
                     "M": [
                         "None",
@@ -7889,11 +7889,11 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cuber2",
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
@@ -8002,9 +8002,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -8018,20 +8018,20 @@
                         "None"
                     ],
                     "M": [
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Cubeb3",
+                        "Coneb3"
                     ],
                     "T": [
+                        "Coneb2",
                         "None",
-                        "None",
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -8047,7 +8047,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -8117,7 +8117,7 @@
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -8135,14 +8135,14 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cuber3",
                         "None"
                     ],
                     "T": [
                         "None",
+                        "Cuber2",
                         "None",
-                        "None",
-                        "None",
+                        "Coner1",
                         "None",
                         "None",
                         "None",
@@ -8258,9 +8258,9 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -8272,10 +8272,10 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cubeb1"
                     ],
                     "M": [
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -8286,7 +8286,7 @@
                         "None"
                     ],
                     "T": [
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -8297,14 +8297,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -8369,8 +8369,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -8385,19 +8385,19 @@
                         "None"
                     ],
                     "M": [
+                        "Coner2",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Cuber3",
+                        "Coner3"
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -8516,11 +8516,12 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
+                        "Cubeb3",
                         "None",
                         "None",
                         "None",
@@ -8528,8 +8529,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None"
+                        "Cubeb2"
                     ],
                     "M": [
                         "None",
@@ -8544,13 +8544,13 @@
                     ],
                     "T": [
                         "None",
+                        "Cubeb3",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cubeb2",
                         "None"
                     ]
                 },
@@ -8561,7 +8561,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -8639,7 +8639,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cuber3"
                     ],
                     "M": [
                         "None",
@@ -8660,7 +8660,7 @@
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cuber3",
                         "None"
                     ]
                 },
@@ -8795,14 +8795,14 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Coneb1",
+                        "Cubeb1",
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -8818,7 +8818,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -8883,9 +8883,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -8910,9 +8910,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coner3",
+                        "Cuber3",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
@@ -9030,8 +9030,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -9075,7 +9075,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -9164,7 +9164,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ],
                     "T": [
                         "None",
@@ -9285,14 +9285,14 @@
             "blue": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 0,
                 "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -9325,14 +9325,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -9410,9 +9410,10 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ],
                     "M": [
+                        "Coner3",
                         "None",
                         "None",
                         "None",
@@ -9420,12 +9421,11 @@
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None"
+                        "Coner2"
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -9543,8 +9543,8 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
@@ -9560,7 +9560,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coneb3",
                         "None",
                         "None",
                         "None",
@@ -9571,25 +9571,25 @@
                         "None"
                     ],
                     "T": [
+                        "Coneb3",
+                        "None",
+                        "Coneb3",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Coneb2"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -9654,12 +9654,12 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -9801,8 +9801,8 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "NotLevel",
                 "autoChargeStationPoints": 8,
-                "autoChargeStationRobot1": "Docked",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -9817,7 +9817,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -9828,14 +9828,14 @@
                         "None"
                     ],
                     "T": [
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cubeb1",
                         "None"
                     ]
                 },
@@ -9846,7 +9846,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -9911,9 +9911,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -9924,7 +9924,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cuber2"
                     ],
                     "M": [
                         "None",
@@ -9938,14 +9938,14 @@
                         "None"
                     ],
                     "T": [
+                        "Coner3",
+                        "Cuber3",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Cuber2",
                         "None"
                     ]
                 },
@@ -10058,9 +10058,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -10074,7 +10074,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coneb3",
                         "None",
                         "None",
                         "None",
@@ -10086,7 +10086,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cubeb3",
                         "None",
                         "None",
                         "None",
@@ -10103,7 +10103,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -10168,14 +10168,14 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
-                        "None",
-                        "None",
+                        "Cuber3",
+                        "Cuber3",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -10192,7 +10192,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ],
                     "T": [
                         "None",
@@ -10313,10 +10313,10 @@
             "blue": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoBridgeState": "NotLevel",
+                "autoChargeStationPoints": 8,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -10331,7 +10331,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -10342,9 +10342,9 @@
                         "None"
                     ],
                     "T": [
+                        "Coneb2",
                         "None",
-                        "None",
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -10353,14 +10353,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -10423,18 +10423,18 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
-                "autoChargeStationRobot1": "Docked",
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
+                        "Cuber4",
                         "None",
                         "None",
                         "None",
@@ -10452,9 +10452,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coner3",
+                        "Cuber3",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
@@ -10588,18 +10588,18 @@
                         "None"
                     ],
                     "M": [
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb1",
+                        "Cubeb1",
                         "None"
                     ],
                     "T": [
-                        "None",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -10617,7 +10617,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -10687,7 +10687,7 @@
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -10710,7 +10710,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -10828,8 +10828,8 @@
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
-                "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationPoints": 0,
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
@@ -10845,9 +10845,9 @@
                         "None"
                     ],
                     "M": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
@@ -10867,14 +10867,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": true,
+                "autoDocked": false,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -10944,7 +10944,7 @@
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -10967,7 +10967,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -11084,10 +11084,10 @@
             "blue": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "Level",
-                "autoChargeStationPoints": 0,
+                "autoBridgeState": "NotLevel",
+                "autoChargeStationPoints": 8,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot2": "Docked",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
@@ -11102,8 +11102,8 @@
                         "None"
                     ],
                     "M": [
-                        "None",
-                        "None",
+                        "Coneb2",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -11124,14 +11124,14 @@
                         "None"
                     ]
                 },
-                "autoDocked": false,
+                "autoDocked": true,
                 "autoGamePieceCount": 0,
                 "autoGamePiecePoints": 0,
                 "autoMobilityPoints": 0,
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -11212,7 +11212,7 @@
                         "None"
                     ],
                     "M": [
-                        "None",
+                        "Coner2",
                         "None",
                         "None",
                         "None",
@@ -11223,14 +11223,14 @@
                         "None"
                     ],
                     "T": [
+                        "Coner2",
+                        "None",
+                        "Coner2",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Cuber3",
                         "None"
                     ]
                 },
@@ -11343,14 +11343,14 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
-                        "None",
-                        "None",
+                        "Cubeb2",
+                        "Cubeb2",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
@@ -11388,7 +11388,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -11453,9 +11453,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -11469,18 +11469,18 @@
                         "None"
                     ],
                     "M": [
+                        "Coner3",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
+                        "Cuber4",
                         "None",
                         "None",
                         "None",
                         "None"
                     ],
                     "T": [
-                        "None",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
@@ -11601,8 +11601,8 @@
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
                 "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot2": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -11628,13 +11628,13 @@
                     ],
                     "T": [
                         "None",
+                        "Cubeb2",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb3",
+                        "Cubeb3",
                         "None"
                     ]
                 },
@@ -11645,7 +11645,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -11708,14 +11708,14 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
-                "autoChargeStationRobot1": "None",
-                "autoChargeStationRobot2": "Docked",
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot2": "None",
                 "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -11734,11 +11734,11 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Coner2"
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber3",
                         "None",
                         "None",
                         "None",
@@ -11870,7 +11870,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cubeb2"
                     ],
                     "M": [
                         "None",
@@ -11884,9 +11884,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb3",
+                        "Cubeb3",
+                        "Coneb3",
                         "None",
                         "None",
                         "None",
@@ -11902,7 +11902,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -11965,14 +11965,14 @@
             "red": {
                 "activationBonusAchieved": false,
                 "adjustPoints": 0,
-                "autoBridgeState": "NotLevel",
-                "autoChargeStationPoints": 8,
-                "autoChargeStationRobot1": "Docked",
+                "autoBridgeState": "Level",
+                "autoChargeStationPoints": 12,
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",
@@ -12114,9 +12114,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "None",
+                "autoChargeStationRobot1": "Docked",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "Docked",
+                "autoChargeStationRobot3": "None",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -12130,19 +12130,19 @@
                         "None"
                     ],
                     "M": [
+                        "Coneb3",
                         "None",
                         "None",
+                        "Coneb1",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
+                        "Coneb2",
                         "None",
                         "None"
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cubeb3",
                         "None",
                         "None",
                         "None",
@@ -12159,7 +12159,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -12224,9 +12224,9 @@
                 "adjustPoints": 0,
                 "autoBridgeState": "Level",
                 "autoChargeStationPoints": 12,
-                "autoChargeStationRobot1": "Docked",
+                "autoChargeStationRobot1": "None",
                 "autoChargeStationRobot2": "None",
-                "autoChargeStationRobot3": "None",
+                "autoChargeStationRobot3": "Docked",
                 "autoCommunity": {
                     "B": [
                         "None",
@@ -12237,7 +12237,7 @@
                         "None",
                         "None",
                         "None",
-                        "None"
+                        "Cuber2"
                     ],
                     "M": [
                         "None",
@@ -12251,9 +12251,9 @@
                         "None"
                     ],
                     "T": [
-                        "None",
-                        "None",
-                        "None",
+                        "Coner3",
+                        "Cuber3",
+                        "Coner3",
                         "None",
                         "None",
                         "None",
@@ -12387,15 +12387,15 @@
                         "None"
                     ],
                     "M": [
+                        "Coneb2",
+                        "Cubeb2",
+                        "Coneb2",
                         "None",
                         "None",
                         "None",
                         "None",
                         "None",
-                        "None",
-                        "None",
-                        "None",
-                        "None"
+                        "Coneb3"
                     ],
                     "T": [
                         "None",
@@ -12416,7 +12416,7 @@
                 "autoPoints": 0,
                 "coopGamePieceCount": 0,
                 "coopertitionCriteriaMet": false,
-                "endGameBridgeState": "",
+                "endGameBridgeState": "Level",
                 "endGameChargeStationPoints": 0,
                 "endGameChargeStationRobot1": "None",
                 "endGameChargeStationRobot2": "None",
@@ -12509,7 +12509,7 @@
                     ],
                     "T": [
                         "None",
-                        "None",
+                        "Cuber2",
                         "None",
                         "None",
                         "None",

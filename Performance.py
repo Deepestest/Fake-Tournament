@@ -25,7 +25,7 @@ def combinePlacements(placementList: list) -> list:
             retval[i].append("None")
     for placements in placementList:
         for i in range(len(placements)):
-            for j in range(len(placements[0])):
+            for j in range(len(placements[i])):
                 if retval[i][j] == "None":
                     retval[i][j] = placements[i][j]
                 else:
@@ -207,6 +207,12 @@ for matchNumber in matchCSV["Match Number"]:
     else:
         redAutoDockIdx = 3
     redScoring = getAutoPlacements(redBots, redAutoDockIdx, "red")
+    TBAMatchJson["score_breakdown"]["blue"]["autoCommunity"]["B"] = blueScoring[0]
+    TBAMatchJson["score_breakdown"]["blue"]["autoCommunity"]["M"] = blueScoring[1]
+    TBAMatchJson["score_breakdown"]["blue"]["autoCommunity"]["T"] = blueScoring[2]
+    TBAMatchJson["score_breakdown"]["red"]["autoCommunity"]["B"] = redScoring[0]
+    TBAMatchJson["score_breakdown"]["red"]["autoCommunity"]["M"] = redScoring[1]
+    TBAMatchJson["score_breakdown"]["red"]["autoCommunity"]["T"] = redScoring[2]
     TBAMatchesJson.append(TBAMatchJson)
 # print(TBAMatchesJson)
 TBAOutput = open("TBAOutput.json", "w")

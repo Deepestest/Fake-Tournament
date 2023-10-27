@@ -1,3 +1,4 @@
+import copy
 import random
 
 
@@ -10,12 +11,13 @@ class Auto:
         self.engagePercent = engagePercent
         self.mobility = mobility
 
-    def getPlacements(self, alliance:str, driverStation:int) -> list:
-        retval = self.placements[:]
+    def getPlacements(self, alliance: str, driverStation: int) -> list:
+        retval = copy.deepcopy(self.placements)
         for row in range(len(retval)):
             for column in range(len(retval[row])):
-                retval[row][column] += (alliance[0] + str(driverStation))
-        return self.placements
+                if retval[row][column] != "None":
+                    retval[row][column] += alliance[0] + str(driverStation)
+        return retval
 
     def getDockPercent(self) -> float:
         return self.dockPercent
