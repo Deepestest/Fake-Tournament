@@ -60,11 +60,6 @@ class Robot:
                 randFloat = 0.6
             self.teleEng = randFloat
             self.teleDockAttempt = 0.8
-        rand = random.randint(0, 10)
-        if rand == 1:
-            self.mobility = 0
-        else:
-            self.mobility = 3
 
     def getTeam(self) -> int:
         return self.team
@@ -73,6 +68,8 @@ class Robot:
         rand = random.randint(-self.HCOV, self.HCOV)
         if rand + self.HCO < 0:
             return 0
+        elif rand + self.HCO > 6:
+            return 6
         else:
             return rand + self.HCO
 
@@ -83,6 +80,8 @@ class Robot:
         rand = random.randint(-self.HCUV, self.HCUV)
         if rand + self.HCU < 0:
             return 0
+        elif rand + self.HCU > 3:
+            return 3
         else:
             return rand + self.HCU
 
@@ -143,9 +142,23 @@ class Robot:
         retval = 0
         if rand < self.getAutoEngagePercent():
             retval = 12
-        elif rand < (self.getAutoDockPercent()+self.getAutoEngagePercent()):
+        elif rand < (self.getAutoDockPercent() + self.getAutoEngagePercent()):
             retval = 8
         return retval
+
+    def attemptedDock(self) -> bool:
+        rand = random.random()
+        if rand < self.teleDockAttempt:
+            return True
+        else:
+            return False
+
+    def engaged(self) -> bool:
+        rand = random.random()
+        if rand < self.teleEng:
+            return True
+        else:
+            return False
 
 
 class LowCube(Robot):

@@ -25,6 +25,13 @@ class Auto:
     def getEngagePercent(self) -> float:
         return self.engagePercent
 
+    def getMobilityPercent(self) -> int:
+        rand = random.random()
+        if rand < self.mobility:
+            return 3
+        else:
+            return 0
+
     def setDockPercent(self, percent: float):
         self.dockPercent = percent
 

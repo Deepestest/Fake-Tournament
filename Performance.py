@@ -1,9 +1,7 @@
+import copy
 import random
-import pandas as pd
 import numpy as np
 import json
-
-from Robot import dockingAutoRobots, randomRobot
 
 
 class NpEncoder(json.JSONEncoder):
@@ -17,12 +15,17 @@ class NpEncoder(json.JSONEncoder):
         return super(NpEncoder, self).default(obj)
 
 
-def combinePlacements(placementList: list) -> list:
+def getBlankPlacements() -> list:
     retval = []
     for i in range(3):
         retval.append([])
         for j in range(9):
             retval[i].append("None")
+    return retval
+
+
+def combinePlacements(placementList: list) -> list:
+    retval = getBlankPlacements()
     for placements in placementList:
         for i in range(len(placements)):
             for j in range(len(placements[i])):
@@ -35,8 +38,11 @@ def combinePlacements(placementList: list) -> list:
     return retval
 
 
-def getAutoPlacements(bots: list, middleBot: int, alliance: str) -> list:
-    retval = bots[0].getAutos().getMiddle().getPlacements(alliance, middleBot + 1)
+def getAutoPlacements(bots: list, middleBot: int, alliance: str) -> dict:
+    retval = {"Placements": [], "Mobility": []}
+    retPlacements = (
+        bots[0].getAutos().getMiddle().getPlacements(alliance, middleBot + 1)
+    )
     rand = random.random()
     feederBot = (middleBot + 1) % 3
     if rand < 0.5:
@@ -46,9 +52,9 @@ def getAutoPlacements(bots: list, middleBot: int, alliance: str) -> list:
     else:
         bumpBot = feederBot + 1
         bumpBot %= 3
-    retval = combinePlacements(
+    retPlacements = combinePlacements(
         [
-            retval,
+            retPlacements,
             bots[bumpBot].getAutos().getBump().getPlacements(alliance, bumpBot + 1),
             bots[feederBot]
             .getAutos()
@@ -56,164 +62,136 @@ def getAutoPlacements(bots: list, middleBot: int, alliance: str) -> list:
             .getPlacements(alliance, feederBot + 1),
         ]
     )
+    for i in range(len(bots)):
+        if i == bumpBot:
+            retval["Mobility"].append(bots[i].getAutos().getBump().getMobilityPercent())
+        elif i == middleBot:
+            retval["Mobility"].append(
+                bots[i].getAutos().getMiddle().getMobilityPercent()
+            )
+        else:
+            retval["Mobility"].append(
+                bots[i].getAutos().getFeeder().getMobilityPercent()
+            )
+    retval["Placements"] = retPlacements
     return retval
 
 
-teamsCSV = pd.read_csv("Teams.csv")
-numTeams = 0
-robots = []
-TBAMatchesJson = []
-for team in teamsCSV["Team"]:
-    robots.append(randomRobot(team))
-    numTeams += 1
-matchCSV = pd.read_csv("Matches.csv")
-numMatches = 0
-for matchNumber in matchCSV["Match Number"]:
-    numMatches += 1
-for matchNumber in matchCSV["Match Number"]:
-    matchJSONFile = open("Match.json")
-    TBAMatchJson = json.load(matchJSONFile)
-    # ActualMatchJson = json.load()
-    matchRobots = []
-    for i in range(6):
-        matchRobots.append(None)
-    r1 = matchCSV["R1"][matchNumber - 1]
-    r2 = matchCSV["R2"][matchNumber - 1]
-    r3 = matchCSV["R3"][matchNumber - 1]
-    b1 = matchCSV["B1"][matchNumber - 1]
-    b2 = matchCSV["B2"][matchNumber - 1]
-    b3 = matchCSV["B3"][matchNumber - 1]
-    # Metadata
-    TBAMatchJson["alliances"]["blue"]["team_keys"][0] = "frc" + str(b1)
-    TBAMatchJson["alliances"]["red"]["team_keys"][0] = "frc" + str(r1)
-    TBAMatchJson["alliances"]["blue"]["team_keys"][1] = "frc" + str(b2)
-    TBAMatchJson["alliances"]["red"]["team_keys"][1] = "frc" + str(r2)
-    TBAMatchJson["alliances"]["blue"]["team_keys"][2] = "frc" + str(b3)
-    TBAMatchJson["alliances"]["red"]["team_keys"][2] = "frc" + str(r3)
-    TBAMatchJson["key"] = "2023fake_qm" + str(matchNumber)
-    TBAMatchJson["match_number"] = matchNumber
-    for robot in robots:
-        if robot.getTeam() == r1:
-            matchRobots[0] = robot
-        elif robot.getTeam() == r2:
-            matchRobots[1] = robot
-        elif robot.getTeam() == r3:
-            matchRobots[2] = robot
-        elif robot.getTeam() == b1:
-            matchRobots[3] = robot
-        elif robot.getTeam() == b2:
-            matchRobots[4] = robot
-        elif robot.getTeam() == b3:
-            matchRobots[5] = robot
-    blueBots = matchRobots[3:]
-    redBots = matchRobots[:3]
-    # Autonomous Docking
-    autoDockRobots = dockingAutoRobots(matchRobots)
-    allianceIdx = 0
-    for string in autoDockRobots:
-        if allianceIdx == 0:
-            if string == "r1":
-                dock = matchRobots[0].getAutoDock()
-                if dock != 0:
-                    TBAMatchJson["score_breakdown"]["red"][
-                        "autoChargeStationRobot1"
-                    ] = "Docked"
-                    TBAMatchJson["score_breakdown"]["red"]["autoDocked"] = True
-                if dock == 8:
-                    TBAMatchJson["score_breakdown"]["red"][
-                        "autoBridgeState"
-                    ] = "NotLevel"
-                TBAMatchJson["score_breakdown"]["red"]["autoChargeStationPoints"] = dock
-            elif string == "r2":
-                dock = matchRobots[1].getAutoDock()
-                if dock != 0:
-                    TBAMatchJson["score_breakdown"]["red"][
-                        "autoChargeStationRobot2"
-                    ] = "Docked"
-                    TBAMatchJson["score_breakdown"]["red"]["autoDocked"] = True
-                if dock == 8:
-                    TBAMatchJson["score_breakdown"]["red"][
-                        "autoBridgeState"
-                    ] = "NotLevel"
-                TBAMatchJson["score_breakdown"]["red"]["autoChargeStationPoints"] = dock
-            elif string == "r3":
-                dock = matchRobots[2].getAutoDock()
-                if dock != 0:
-                    TBAMatchJson["score_breakdown"]["red"][
-                        "autoChargeStationRobot3"
-                    ] = "Docked"
-                    TBAMatchJson["score_breakdown"]["red"]["autoDocked"] = True
-                if dock == 8:
-                    TBAMatchJson["score_breakdown"]["red"][
-                        "autoBridgeState"
-                    ] = "NotLevel"
-                TBAMatchJson["score_breakdown"]["red"]["autoChargeStationPoints"] = dock
-        else:
-            if string == "b1":
-                dock = matchRobots[3].getAutoDock()
-                if dock != 0:
-                    TBAMatchJson["score_breakdown"]["blue"][
-                        "autoChargeStationRobot1"
-                    ] = "Docked"
-                    TBAMatchJson["score_breakdown"]["blue"]["autoDocked"] = True
-                if dock == 8:
-                    TBAMatchJson["score_breakdown"]["blue"][
-                        "autoBridgeState"
-                    ] = "NotLevel"
-                TBAMatchJson["score_breakdown"]["blue"][
-                    "autoChargeStationPoints"
-                ] = dock
-            elif string == "b2":
-                dock = matchRobots[4].getAutoDock()
-                if dock != 0:
-                    TBAMatchJson["score_breakdown"]["blue"][
-                        "autoChargeStationRobot2"
-                    ] = "Docked"
-                    TBAMatchJson["score_breakdown"]["blue"]["autoDocked"] = True
-                if dock == 8:
-                    TBAMatchJson["score_breakdown"]["blue"][
-                        "autoBridgeState"
-                    ] = "NotLevel"
-                TBAMatchJson["score_breakdown"]["blue"][
-                    "autoChargeStationPoints"
-                ] = dock
-            elif string == "b3":
-                dock = matchRobots[5].getAutoDock()
-                if dock != 0:
-                    TBAMatchJson["score_breakdown"]["blue"][
-                        "autoChargeStationRobot3"
-                    ] = "Docked"
-                    TBAMatchJson["score_breakdown"]["blue"]["autoDocked"] = True
-                if dock == 8:
-                    TBAMatchJson["score_breakdown"]["blue"][
-                        "autoBridgeState"
-                    ] = "NotLevel"
-                TBAMatchJson["score_breakdown"]["blue"][
-                    "autoChargeStationPoints"
-                ] = dock
-        allianceIdx += 1
-    # Auto Scoring
-    if autoDockRobots[1][-1] == "1":
-        blueAutoDockIdx = 0
-    elif autoDockRobots[1][-1] == "2":
-        blueAutoDockIdx = 2
-    else:
-        blueAutoDockIdx = 3
-    blueScoring = getAutoPlacements(blueBots, blueAutoDockIdx, "blue")
-    if autoDockRobots[0][-1] == "1":
-        redAutoDockIdx = 0
-    elif autoDockRobots[0][-1] == "2":
-        redAutoDockIdx = 2
-    else:
-        redAutoDockIdx = 3
-    redScoring = getAutoPlacements(redBots, redAutoDockIdx, "red")
-    TBAMatchJson["score_breakdown"]["blue"]["autoCommunity"]["B"] = blueScoring[0]
-    TBAMatchJson["score_breakdown"]["blue"]["autoCommunity"]["M"] = blueScoring[1]
-    TBAMatchJson["score_breakdown"]["blue"]["autoCommunity"]["T"] = blueScoring[2]
-    TBAMatchJson["score_breakdown"]["red"]["autoCommunity"]["B"] = redScoring[0]
-    TBAMatchJson["score_breakdown"]["red"]["autoCommunity"]["M"] = redScoring[1]
-    TBAMatchJson["score_breakdown"]["red"]["autoCommunity"]["T"] = redScoring[2]
-    TBAMatchesJson.append(TBAMatchJson)
-# print(TBAMatchesJson)
-TBAOutput = open("TBAOutput.json", "w")
-json.dump(TBAMatchesJson, TBAOutput, cls=NpEncoder)
+def getBlankNode(row: int, checkSpots: list, placements: list) -> list:
+    retval = []
+    exists = False
+    found = False
+    for spot in checkSpots:
+        if placements[row][spot][:4] == "None":
+            exists = True
+            retval.append(row)
+            break
+    if not exists:
+        retval.append(-1)
+        retval.append(-1)
+    if exists:
+        while not found:
+            rand = random.randint(0, (len(checkSpots) - 1))
+            if placements[row][checkSpots[rand]][:4] == "None":
+                found = True
+                retval.append(checkSpots[rand])
+                break
+    return retval
+
+
+def getBlankSpot(spotType: str, placements: list) -> list:
+    retval = []
+    match spotType:
+        case "hco":
+            retval = getBlankNode(2, [0, 2, 3, 5, 6, 8], placements)
+        case "hcu":
+            retval = getBlankNode(2, [1, 4, 7], placements)
+        case "mco":
+            retval = getBlankNode(1, [0, 2, 3, 5, 6, 8], placements)
+        case "mcu":
+            retval = getBlankNode(1, [1, 4, 7], placements)
+        case "lco" | "lcu":
+            retval = getBlankNode(0, [1, 2, 3, 4, 5, 6, 7, 8], placements)
+    return retval
+
+
+def getTeleopPlacements(bots: list, autoScoring: list, alliance: str) -> list:
+    retval = copy.deepcopy(autoScoring)
+    for botIdx in range(len(bots)):
+        botPlacements = copy.deepcopy(retval)
+        hco = bots[botIdx].getHCO()
+        for i in range(hco):
+            randSpot = getBlankSpot("hco", botPlacements)
+            if randSpot is not None:
+                botPlacements[randSpot[0]][randSpot[1]] = (
+                    "Cone" + alliance[0] + str(botIdx + 1)
+                )
+        hcu = bots[botIdx].getHCU()
+        for i in range(hcu):
+            randSpot = getBlankSpot("hcu", botPlacements)
+            if randSpot is not None:
+                botPlacements[randSpot[0]][randSpot[1]] = (
+                    "Cube" + alliance[0] + str(botIdx + 1)
+                )
+        mco = bots[botIdx].getMCO()
+        for i in range(mco):
+            randSpot = getBlankSpot("mco", botPlacements)
+            if randSpot is not None:
+                botPlacements[randSpot[0]][randSpot[1]] = (
+                    "Cone" + alliance[0] + str(botIdx + 1)
+                )
+        mcu = bots[botIdx].getMCU()
+        for i in range(mcu):
+            randSpot = getBlankSpot("mcu", botPlacements)
+            if randSpot is not None:
+                botPlacements[randSpot[0]][randSpot[1]] = (
+                    "Cube" + alliance[0] + str(botIdx + 1)
+                )
+        lco = bots[botIdx].getLCO()
+        for i in range(lco):
+            randSpot = getBlankSpot("lco", botPlacements)
+            if randSpot is not None:
+                botPlacements[randSpot[0]][randSpot[1]] = (
+                    "Cone" + alliance[0] + str(botIdx + 1)
+                )
+        lcu = bots[botIdx].getLCU()
+        for i in range(lcu):
+            randSpot = getBlankSpot("lcu", botPlacements)
+            if randSpot is not None:
+                botPlacements[randSpot[0]][randSpot[1]] = (
+                    "Cube" + alliance[0] + str(botIdx + 1)
+                )
+        retval = combinePlacements([retval, botPlacements])
+    return retval
+
+
+def getLinks(placements: list) -> list:
+    retval = []
+    linkList = []
+    rowStr = ""
+    linksBlankDict = {"nodes": [], "row": ""}
+    piecesTogether = 0
+    for row in range(len(placements)):
+        piecesTogether = 0
+        for spot in range(len(placements[row])):
+            if placements[row][spot][:4] == "None":
+                piecesTogether = 0
+            else:
+                piecesTogether += 1
+                if piecesTogether == 1:
+                    linkList = list()
+                linkList.append(spot + 1)
+                if piecesTogether == 3:
+                    newDict = copy.deepcopy(linksBlankDict)
+                    newDict["nodes"] = linkList
+                    match row:
+                        case 0:
+                            rowStr = "Bottom"
+                        case 1:
+                            rowStr = "Mid"
+                        case 2:
+                            rowStr = "Top"
+                    newDict["row"] = rowStr
+                    piecesTogether = 0
+                    retval.append(newDict)
+    return retval
