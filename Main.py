@@ -566,9 +566,8 @@ scoutIdx = 0
 for team in teamsCSV["Team"]:
     for i in range(10):
         scouts.append(
-            getRandomScout(scoutIdx, team, str(scoutIdx) + "@" + str(team) + ".com")
+            getRandomScout(scoutIdx, team, str(scoutIdx) + "@" + str(team) + ".com", numMatches)
         )
         scoutIdx += 1
-print(scouts)
 # scoutingOutput = open("Output.json", "w")
 # json.dump(scouts, scoutingOutput, cls=NpEncoder)
