@@ -109,21 +109,21 @@ def getPieceScored(
 
 def getErrorAdjustedPieces(numPieces: int, errorPercent: float, max: int) -> int:
     retval = numPieces
-    for i in range(numPieces):
-        rand = random.random()
-        if rand < errorPercent:
-            rand = random.random()
-            if rand < 0.5:
-                retval += 1
-            else:
-                retval -= 1
-    rand = random.random()
-    if rand < 0.5:
-        retval *= -1
-    if retval > max:
-        retval = max
-    elif retval < 0:
-        retval = 0
+    # for i in range(numPieces):
+    #     rand = random.random()
+    #     if rand < errorPercent:
+    #         rand = random.random()
+    #         if rand < 0.5:
+    #             retval += 1
+    #         else:
+    #             retval -= 1
+    # rand = random.random()
+    # if rand < 0.5:
+    #     retval *= -1
+    # if retval > max:
+    #     retval = max
+    # elif retval < 0:
+    #     retval = 0
     return retval
 
 
