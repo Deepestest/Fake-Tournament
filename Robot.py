@@ -19,6 +19,7 @@ class Robot:
         LCOV: int,
         LCU: int,
         LCUV: int,
+        deathRate: float,
         autos: Autos,
     ):
         self.HCO = HCO
@@ -33,6 +34,7 @@ class Robot:
         self.LCOV = LCOV
         self.LCU = LCU
         self.LCUV = LCUV
+        self.deathRate = deathRate
         self.team = team
         self.autos = autos
         rand = random.randint(0, 19)
@@ -68,8 +70,6 @@ class Robot:
         rand = random.randint(-self.HCOV, self.HCOV)
         if rand + self.HCO < 0:
             return 0
-        elif rand + self.HCO > 6:
-            return 6
         else:
             return rand + self.HCO
 
@@ -80,8 +80,6 @@ class Robot:
         rand = random.randint(-self.HCUV, self.HCUV)
         if rand + self.HCU < 0:
             return 0
-        elif rand + self.HCU > 3:
-            return 3
         else:
             return rand + self.HCU
 
@@ -160,6 +158,13 @@ class Robot:
         else:
             return False
 
+    def isDead(self) -> bool:
+        rand = random.random()
+        return False
+        if rand < self.deathRate:
+            return True
+        else:
+            return False
 
 class LowCube(Robot):
     def __init__(self, team: int):
@@ -193,7 +198,7 @@ class LowCube(Robot):
             ]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 2, autos)
+        Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 2, 0.1, autos)
 
 
 class Cube(Robot):
@@ -234,7 +239,7 @@ class Cube(Robot):
             ]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 0, 0, 1, 1, 0, 0, 1, 1, 0, 0, 5, 2, autos)
+        Robot.__init__(self, team, 0, 0, 8, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0.1, autos)
 
 
 class BadCone(Robot):
@@ -269,7 +274,7 @@ class BadCone(Robot):
             ]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 2, 2, 0, 0, 3, 1, 0, 0, 0, 2, 0, 0, autos)
+        Robot.__init__(self, team, 5, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, autos)
 
 
 class GoodCone(Robot):
@@ -297,7 +302,8 @@ class GoodCone(Robot):
             ]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 5, 1, 0, 0, 4, 1, 0, 0, 0, 2, 0, 0, autos)
+        Robot.__init__(self, team, 7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, autos)
+
 
 
 class GodBot(Robot):
@@ -313,7 +319,7 @@ class GodBot(Robot):
             [ThreePiece(["Cone", "Cube", "Cone"], [2, 2, 2], [6, 7, 8], 0, 0)]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 4, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 1, autos)
+        Robot.__init__(self, team, 4, 1, 6, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0.0, autos)
 
 
 class NoHigh(Robot):
@@ -336,7 +342,7 @@ class NoHigh(Robot):
             [NoAuto(), TwoPiece(["Cone", "Cube"], [1, 1], [8, 7], 0, 0)]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 0, 0, 0, 0, 4, 1, 2, 1, 1, 1, 1, 1, autos)
+        Robot.__init__(self, team, 0, 0, 0, 0, 4, 1, 3, 1, 0, 0, 0, 0, 0.1, autos)
 
 
 class NoHighCones(Robot):
@@ -359,7 +365,7 @@ class NoHighCones(Robot):
             [NoAuto(), TwoPiece(["Cone", "Cube"], [1, 2], [8, 7], 0, 0)]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 0, 0, 2, 1, 3, 1, 1, 1, 1, 1, 1, 1, autos)
+        Robot.__init__(self, team, 0, 0, 2, 1, 4, 1, 0, 0, 0, 0, 0, 0, 0.1, autos)
 
 
 class DefenseBot(Robot):
@@ -382,7 +388,7 @@ class DefenseBot(Robot):
             [NoAuto(), OnePiece("Cube", 0, 8, 0, 0, 0), OnePiece("Cube", 0, 8, 0, 0, 3)]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, autos)
+        Robot.__init__(self, team, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0.0, autos)
 
 
 class Okay(Robot):
@@ -404,7 +410,7 @@ class Okay(Robot):
             ]
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, autos)
+        Robot.__init__(self, team, 3, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0.3, autos)
 
 
 class Bad(Robot):
@@ -416,7 +422,7 @@ class Bad(Robot):
         # Randomizing Bump Auto
         bumpAuto = getRandomAuto([NoAuto()])
         autos = Autos(feederAuto, middleAuto, bumpAuto)
-        Robot.__init__(self, team, 0, 1, 0, 1, 0, 1, 0, 1, 1, 1, 1, 1, autos)
+        Robot.__init__(self, team, 2, 1, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0.5, autos)
 
 
 def randomRobot(team: int) -> Robot:

@@ -101,67 +101,86 @@ def getBlankNode(row: int, checkSpots: list, placements: list) -> list:
 
 def getBlankSpot(spotType: str, placements: list) -> list:
     retval = []
-    match spotType:
-        case "hco":
-            retval = getBlankNode(2, [0, 2, 3, 5, 6, 8], placements)
-        case "hcu":
-            retval = getBlankNode(2, [1, 4, 7], placements)
-        case "mco":
-            retval = getBlankNode(1, [0, 2, 3, 5, 6, 8], placements)
-        case "mcu":
-            retval = getBlankNode(1, [1, 4, 7], placements)
-        case "lco" | "lcu":
-            retval = getBlankNode(0, [1, 2, 3, 4, 5, 6, 7, 8], placements)
-    return retval
+    found = False
+    while not found:
+        match spotType:
+            case "hco":
+                retval = getBlankNode(2, [0, 2, 3, 5, 6, 8], placements)         
+                if retval is not None:
+                    spotType = "mco"
+                else:
+                    found = True
+            case "hcu":
+                retval = getBlankNode(2, [1, 4, 7], placements)
+                if retval is not None:
+                    spotType = "mcu"
+                else:
+                    found = True
+            case "mco":
+                retval = getBlankNode(1, [0, 2, 3, 5, 6, 8], placements)
+                if retval is not None:
+                    spotType = "lco"
+                else:
+                    found = True
+            case "mcu":
+                retval = getBlankNode(1, [1, 4, 7], placements)
+                if retval is not None:
+                    spotType = "lcu"
+                else:
+                    found = True
+            case "lco" | "lcu":
+                retval = getBlankNode(0, [1, 2, 3, 4, 5, 6, 7, 8], placements)
+        return retval
 
 
 def getTeleopPlacements(bots: list, autoScoring: list, alliance: str) -> list:
     retval = copy.deepcopy(autoScoring)
     for botIdx in range(len(bots)):
-        botPlacements = copy.deepcopy(retval)
-        hco = bots[botIdx].getHCO()
-        for i in range(hco):
-            randSpot = getBlankSpot("hco", botPlacements)
-            if randSpot is not None:
-                botPlacements[randSpot[0]][randSpot[1]] = (
-                    "Cone" + alliance[0] + str(botIdx + 1)
-                )
-        hcu = bots[botIdx].getHCU()
-        for i in range(hcu):
-            randSpot = getBlankSpot("hcu", botPlacements)
-            if randSpot is not None:
-                botPlacements[randSpot[0]][randSpot[1]] = (
-                    "Cube" + alliance[0] + str(botIdx + 1)
-                )
-        mco = bots[botIdx].getMCO()
-        for i in range(mco):
-            randSpot = getBlankSpot("mco", botPlacements)
-            if randSpot is not None:
-                botPlacements[randSpot[0]][randSpot[1]] = (
-                    "Cone" + alliance[0] + str(botIdx + 1)
-                )
-        mcu = bots[botIdx].getMCU()
-        for i in range(mcu):
-            randSpot = getBlankSpot("mcu", botPlacements)
-            if randSpot is not None:
-                botPlacements[randSpot[0]][randSpot[1]] = (
-                    "Cube" + alliance[0] + str(botIdx + 1)
-                )
-        lco = bots[botIdx].getLCO()
-        for i in range(lco):
-            randSpot = getBlankSpot("lco", botPlacements)
-            if randSpot is not None:
-                botPlacements[randSpot[0]][randSpot[1]] = (
-                    "Cone" + alliance[0] + str(botIdx + 1)
-                )
-        lcu = bots[botIdx].getLCU()
-        for i in range(lcu):
-            randSpot = getBlankSpot("lcu", botPlacements)
-            if randSpot is not None:
-                botPlacements[randSpot[0]][randSpot[1]] = (
-                    "Cube" + alliance[0] + str(botIdx + 1)
-                )
-        retval = combinePlacements([retval, botPlacements])
+        if not bots[botIdx].isDead():
+            botPlacements = copy.deepcopy(retval)
+            hco = bots[botIdx].getHCO()
+            for i in range(hco):
+                randSpot = getBlankSpot("hco", botPlacements)
+                if randSpot is not None:
+                    botPlacements[randSpot[0]][randSpot[1]] = (
+                        "Cone" + alliance[0] + str(botIdx + 1)
+                    )
+            hcu = bots[botIdx].getHCU()
+            for i in range(hcu):
+                randSpot = getBlankSpot("hcu", botPlacements)
+                if randSpot is not None:
+                    botPlacements[randSpot[0]][randSpot[1]] = (
+                        "Cube" + alliance[0] + str(botIdx + 1)
+                    )
+            mco = bots[botIdx].getMCO()
+            for i in range(mco):
+                randSpot = getBlankSpot("mco", botPlacements)
+                if randSpot is not None:
+                    botPlacements[randSpot[0]][randSpot[1]] = (
+                        "Cone" + alliance[0] + str(botIdx + 1)
+                    )
+            mcu = bots[botIdx].getMCU()
+            for i in range(mcu):
+                randSpot = getBlankSpot("mcu", botPlacements)
+                if randSpot is not None:
+                    botPlacements[randSpot[0]][randSpot[1]] = (
+                        "Cube" + alliance[0] + str(botIdx + 1)
+                    )
+            lco = bots[botIdx].getLCO()
+            for i in range(lco):
+                randSpot = getBlankSpot("lco", botPlacements)
+                if randSpot is not None:
+                    botPlacements[randSpot[0]][randSpot[1]] = (
+                        "Cone" + alliance[0] + str(botIdx + 1)
+                    )
+            lcu = bots[botIdx].getLCU()
+            for i in range(lcu):
+                randSpot = getBlankSpot("lcu", botPlacements)
+                if randSpot is not None:
+                    botPlacements[randSpot[0]][randSpot[1]] = (
+                        "Cube" + alliance[0] + str(botIdx + 1)
+                    )
+            retval = combinePlacements([retval, botPlacements])
     return retval
 
 

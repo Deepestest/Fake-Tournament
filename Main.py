@@ -563,11 +563,27 @@ json.dump(TBAMatchesJson, TBAOutput, cls=NpEncoder)
 # Now Do Scouting Data
 scouts = []
 scoutIdx = 0
-for team in teamsCSV["Team"]:
-    for i in range(10):
+foundTeams = 0
+scoutingTeams = []
+while foundTeams < 4:
+    team = random.choice(teamsCSV["Team"])
+    if not scoutingTeams.__contains__(team):
+        foundTeams += 1
+        scoutingTeams.append(team)
+for team in scoutingTeams:
+    for i in range(6):
         scouts.append(
             getRandomScout(scoutIdx, team, str(scoutIdx) + "@" + str(team) + ".com", numMatches)
         )
         scoutIdx += 1
-# scoutingOutput = open("Output.json", "w")
-# json.dump(scouts, scoutingOutput, cls=NpEncoder)
+driverStations = ["r1", "r2", "r3", "b1", "b2", "b3"]
+scoutingData = []
+for game in ActualMatchesJson:
+    for i in range(len(scouts)):
+        driverStation = random.choice(driverStations)
+        scout = scouts[i]
+        data = scout.scoutMatch(game, driverStation)
+        if data is not None:
+            scoutingData.append(data)
+scoutingOutput = open("ScoutingOutput.json", "w")
+json.dump(scoutingData, scoutingOutput, cls=NpEncoder)

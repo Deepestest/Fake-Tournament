@@ -1,11 +1,15 @@
 import copy
 import json
+import math
 import pandas as pd
 import numpy as np
 import warnings
 
-warnings.filterwarnings("ignore")
+from PolarChecker import getError
 
+warnings.filterwarnings("ignore")
+dataFile = open("Output.json")
+realData = json.load(dataFile)
 
 def flatten_dict(dd, separator="_", prefix=""):
     return (
@@ -64,8 +68,8 @@ blankOprEntry = {
     "station3": 0,
 }
 for row in data:
-    for i in range(2):
-        if i == 1:
+    for j in range(2):
+        if j == 1:
             allianceStr = "red"
         else:
             allianceStr = "blue"
@@ -88,8 +92,8 @@ for row in data:
         oprMatchList.append(copy.deepcopy(oprMatchEntry))
 oprMatchDataFrame = pd.DataFrame(oprMatchList)
 teams = []
-for i in range(3):
-    for matchTeam in oprMatchDataFrame["station" + str(i + 1)]:
+for j in range(3):
+    for matchTeam in oprMatchDataFrame["station" + str(j + 1)]:
         exists = False
         for team in teams:
             if matchTeam == team:
@@ -110,39 +114,56 @@ YKeys = [
     "teleop_mcu",
     "teleop_lp",
 ]
-YMatrix = oprMatchDataFrame[YKeys]
 
-# TBA Data for A Matrix
-matchTeamMatrix = oprMatchDataFrame[["station1", "station2", "station3"]]
-blankAEntry = {}
-for team in teams:
-    blankAEntry[team] = 0
-Alist = []
-for game in matchTeamMatrix.values.tolist():
-    AEntry = copy.deepcopy(blankAEntry)
-    for team in game:
-        AEntry[team] = 1
-    Alist.append(AEntry)
+scoutingDataFile = open("ScoutingOutput.json")
+scoutingBaseData = json.load(scoutingDataFile)
+errorData = []
+numEntries = len(scoutingBaseData)
+for i in range(math.floor(numEntries/10)):
+    j = i * 10
+    print(j)
+    # TBA Data for A Matrix
+    YMatrix = pd.DataFrame(None, columns=YKeys)
+    # YMatrix = oprMatchDataFrame[YKeys]
+    # matchTeamMatrix = oprMatchDataFrame[["station1", "station2", "station3"]]
+    blankAEntry = {}
+    for team in teams:
+        blankAEntry[team] = 0
+    Alist = []
+    # for game in matchTeamMatrix.values.tolist():
+    #     AEntry = copy.deepcopy(blankAEntry)
+    #     for team in game:
+    #         AEntry[team] = 1
+    #     Alist.append(AEntry)
 
-# Fitting Scouting Data to Matrices A and Y
-# scoutingDataFile = open("ScoutingOutput.json")
-# scoutingData = json.load(scoutingDataFile)
-# for entry in scoutingData:
-#     AEntry = copy.deepcopy(blankAEntry)
-#     AEntry[entry["metadata"]["team_number"]] = 1
-#     Alist.append(AEntry)
-#     data = flatten_dict(entry["data"])
-#     YEntry = [data[key] for key in YKeys]
-#     YMatrix.loc[len(YMatrix.index)] = YEntry
-AMatrix = pd.DataFrame(Alist)
-APseudoInverse = np.linalg.pinv(AMatrix)
+    # Fitting Scouting Data to Matrices A and Y
+    scoutingData = copy.deepcopy(scoutingBaseData[:j])
+    for team in teams:
+        numEntries = 0
+        AEntry = copy.deepcopy(blankAEntry)
+        YEntry = [0 for key in YKeys]
+        for entry in scoutingData:
+            if entry["metadata"]["team_number"] == team:
+                AEntry[entry["metadata"]["team_number"]] = 1
+                data = flatten_dict(entry["data"])
+                newY = [data[key] for key in YKeys]
+                YMatrix.loc[len(YMatrix.index)] = newY
+                Alist.append(AEntry)
+                YEntry = [YEntry[j] + newY[j] for j in range(len(YEntry))]
+                numEntries+=1
+        if (numEntries!= 0):
+            YEntry = [YEntry[i]/numEntries for i in range(len(YEntry))]
+        # YMatrix.loc[len(YMatrix.index)] = YEntry
+        # Alist.append(AEntry)
+    AMatrix = pd.DataFrame(Alist)
+    APseudoInverse = np.linalg.pinv(AMatrix)
 
-# Multivariate Regression
-XMatrix = pd.DataFrame(APseudoInverse @ YMatrix)
-XMatrix["team_number"] = teams
-cols = XMatrix.columns.tolist()
-cols = cols[-1:] + cols[:-1]
-XMatrix = XMatrix[cols]
-AMatrix.to_csv("AMatrix.csv")
-YMatrix.to_csv("YMatrix.csv")
-XMatrix.to_csv("PolarOutput.csv")
+    # Multivariate Regression
+    XMatrix = pd.DataFrame(APseudoInverse @ YMatrix)
+    XMatrix["team_number"] = teams
+    cols = XMatrix.columns.tolist()
+    cols = cols[-1:] + cols[:-1]
+    XMatrix = XMatrix[cols]
+    errorData.append(getError(XMatrix, realData))
+errorDataFrame = pd.DataFrame(errorData, columns=["Average Error"])
+errorDataFrame.to_csv("PolarError.csv")

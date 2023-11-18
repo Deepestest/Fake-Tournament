@@ -16,7 +16,7 @@ class Scout:
         self.team_number = team_number
         self.email = email
         self.maxMatches = maxMatches
-        self.scoutChance = maxMatches / numMatches
+        self.scoutChance = maxMatches/numMatches
         self.scoutedMatches = 0
         self.canScout = True
 
@@ -109,15 +109,17 @@ def getPieceScored(
 
 def getErrorAdjustedPieces(numPieces: int, errorPercent: float, max: int) -> int:
     retval = numPieces
-    errorVal = 0
     for i in range(numPieces):
         rand = random.random()
         if rand < errorPercent:
-            errorVal += 1
+            rand = random.random()
+            if rand < 0.5:
+                retval += 1
+            else:
+                retval -= 1
     rand = random.random()
     if rand < 0.5:
-        errorVal *= -1
-    retval += errorVal
+        retval *= -1
     if retval > max:
         retval = max
     elif retval < 0:
