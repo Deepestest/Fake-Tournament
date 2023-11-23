@@ -105,7 +105,7 @@ def getBlankSpot(spotType: str, placements: list) -> list:
     while not found:
         match spotType:
             case "hco":
-                retval = getBlankNode(2, [0, 2, 3, 5, 6, 8], placements)         
+                retval = getBlankNode(2, [0, 2, 3, 5, 6, 8], placements)
                 if retval is not None:
                     spotType = "mco"
                 else:

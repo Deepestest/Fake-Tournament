@@ -1,6 +1,7 @@
 import json
 import random
 
+
 class Scout:
     def __init__(
         self,
@@ -16,7 +17,7 @@ class Scout:
         self.team_number = team_number
         self.email = email
         self.maxMatches = maxMatches
-        self.scoutChance = maxMatches/numMatches
+        self.scoutChance = maxMatches / numMatches
         self.scoutedMatches = 0
         self.canScout = True
 
@@ -109,47 +110,57 @@ def getPieceScored(
 
 def getErrorAdjustedPieces(numPieces: int, errorPercent: float, max: int) -> int:
     retval = numPieces
-    # for i in range(numPieces):
-    #     rand = random.random()
-    #     if rand < errorPercent:
-    #         rand = random.random()
-    #         if rand < 0.5:
-    #             retval += 1
-    #         else:
-    #             retval -= 1
-    # rand = random.random()
-    # if rand < 0.5:
-    #     retval *= -1
-    # if retval > max:
-    #     retval = max
-    # elif retval < 0:
-    #     retval = 0
+    for i in range(numPieces):
+        rand = random.random()
+        if rand < errorPercent:
+            rand = random.random()
+            if rand < 0.5:
+                retval += 1
+            else:
+                retval -= 1
+    rand = random.random()
+    if rand < 0.5:
+        retval *= -1
+    if retval > max:
+        retval = max
+    elif retval < 0:
+        retval = 0
     return retval
 
 
 class Vaclav(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 30, 0.3, "Vaclav" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 30, 0.3, "Vaclav" + str(name), team_number, email, numMatches
+        )
 
 
 class Vishnu(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 10, 0.25, "Vishnu" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 10, 0.25, "Vishnu" + str(name), team_number, email, numMatches
+        )
 
 
 class Dmitri(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 100, 0.05, "Dmitri" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 100, 0.05, "Dmitri" + str(name), team_number, email, numMatches
+        )
 
 
 class Ivan(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 100, 0.1, "Ivan" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 100, 0.1, "Ivan" + str(name), team_number, email, numMatches
+        )
 
 
 class Adarsh(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 1, 0.1, "Adarsh" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 1, 0.1, "Adarsh" + str(name), team_number, email, numMatches
+        )
 
 
 class Rishabh(Scout):
@@ -166,17 +177,23 @@ class Ben(Scout):
 
 class Roarke(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 80, 0.08, "Roarke" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 80, 0.08, "Roarke" + str(name), team_number, email, numMatches
+        )
 
 
 class Deepesh(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 80, 0.18, "Deepesh" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 80, 0.18, "Deepesh" + str(name), team_number, email, numMatches
+        )
 
 
 class Rwad(Scout):
     def __init__(self, name: str, team_number: int, email: str, numMatches: int):
-        Scout.__init__(self, 40, 0.23, "Rwad" + str(name), team_number, email, numMatches)
+        Scout.__init__(
+            self, 40, 0.23, "Rwad" + str(name), team_number, email, numMatches
+        )
 
 
 def getRandomScout(name: str, team_number: int, email: str, matchCount: int) -> Scout:

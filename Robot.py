@@ -166,6 +166,7 @@ class Robot:
         else:
             return False
 
+
 class LowCube(Robot):
     def __init__(self, team: int):
         # Randomizing Middle Auto
@@ -303,7 +304,6 @@ class GoodCone(Robot):
         )
         autos = Autos(feederAuto, middleAuto, bumpAuto)
         Robot.__init__(self, team, 7, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.2, autos)
-
 
 
 class GodBot(Robot):

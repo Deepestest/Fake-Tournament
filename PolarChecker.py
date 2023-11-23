@@ -6,6 +6,7 @@ import warnings
 
 warnings.filterwarnings("ignore")
 
+
 def getPiecesScored(match: dict, communityStr: str, driverStation: str) -> list:
     if driverStation[0] == "r":
         allianceStr = "red"
@@ -40,7 +41,6 @@ def getPieceScored(
 def addValues(teamData: dict, newData: list, teleop: bool) -> pd.Series:
     retval = copy.deepcopy(teamData)
     if teleop:
-        retval["numMatches"] += 1
         communityStr = "teleop"
     else:
         communityStr = "auto"
@@ -50,6 +50,7 @@ def addValues(teamData: dict, newData: list, teleop: bool) -> pd.Series:
     retval[communityStr + "_mcu"] += newData[3]
     retval[communityStr + "_lp"] += newData[4]
     return retval
+
 
 def getError(polarData: pd.DataFrame, realData: list) -> list:
     teams = []
@@ -97,13 +98,18 @@ def getError(polarData: pd.DataFrame, realData: list) -> list:
                     "frc" + str(team)
                 ):
                     driverStation = allianceStr[0] + str(
-                        game["alliances"][allianceStr]["team_keys"].index("frc" + str(team))
+                        game["alliances"][allianceStr]["team_keys"].index(
+                            "frc" + str(team)
+                        )
                         + 1
                     )
                     autoScoring = getPiecesScored(game, "autoCommunity", driverStation)
-                    teleopScoring = getPiecesScored(game, "teleopCommunity", driverStation)
+                    teleopScoring = getPiecesScored(
+                        game, "teleopCommunity", driverStation
+                    )
                     teamData = addValues(teamData, autoScoring, False)
                     teamData = addValues(teamData, teleopScoring, True)
+                    teamData["numMatches"] +=1
         teamDataList.append(teamData)
     for teamData in teamDataList:
         teamData["auto_hco"] /= teamData["numMatches"]
@@ -136,6 +142,8 @@ def getError(polarData: pd.DataFrame, realData: list) -> list:
     errorData = copy.deepcopy(polarData)
     for i in range(len(polarData)):
         for errorKey in errorKeys:
-            errorData[errorKey][i] = abs(polarData[errorKey][i] - actualData[errorKey][i])
+            errorData[errorKey][i] = abs(
+                polarData[errorKey][i] - actualData[errorKey][i]
+            )
     errorData = errorData[errorKeys]
     return sum(errorData.mean())
