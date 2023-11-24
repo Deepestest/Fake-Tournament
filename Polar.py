@@ -4,11 +4,11 @@ import math
 import pandas as pd
 import numpy as np
 import warnings
+from numba import jit, cuda
 
 from PolarChecker import getError
 
 warnings.filterwarnings("ignore")
-
 
 
 def flatten_dict(dd, separator="_", prefix=""):
@@ -46,11 +46,12 @@ def getPieceScored(
         if spot[:4] == piece:
             retval += 1
     return retval
-def analyzeData():
-    dataFile = open("Output.json")
-    realData = json.load(dataFile)
-    dataFile = open("TBAOutput.json")
-    data = json.load(dataFile)
+# @jit(target_backend='cuda')
+
+
+def analyzeData(m_data: list):
+    realData = m_data[0]
+    data = m_data[1]
     oprMatchList = []
     # Isolating Data Related to OPR
     blankOprEntry = {
@@ -116,8 +117,7 @@ def analyzeData():
         "teleop_lp",
     ]
 
-    scoutingDataFile = open("ScoutingOutput.json")
-    scoutingBaseData = json.load(scoutingDataFile)
+    scoutingBaseData = m_data[2]
     errorData = []
     numEntries = len(scoutingBaseData)
     for i in range(math.floor(numEntries / 10) + 1):
@@ -125,7 +125,8 @@ def analyzeData():
         # TBA Data
         YMatrix = pd.DataFrame(None, columns=YKeys)
         YMatrix = oprMatchDataFrame[YKeys]
-        matchTeamMatrix = oprMatchDataFrame[["station1", "station2", "station3"]]
+        matchTeamMatrix = oprMatchDataFrame[[
+            "station1", "station2", "station3"]]
         blankAEntry = {}
         for team in teams:
             blankAEntry[team] = 0
@@ -149,7 +150,8 @@ def analyzeData():
                         allianceStr = "red"
                     if entry["metadata"]["team_number"] == team:
                         if not teamMatches.__contains__(entry["metadata"]["match_number"]):
-                            teamMatches.append(entry["metadata"]["match_number"])
+                            teamMatches.append(
+                                entry["metadata"]["match_number"])
             teamMatchesList[team] = teamMatches
         teamIdx = -1
         for team in teams:
@@ -179,10 +181,8 @@ def analyzeData():
             teamAEntry = copy.deepcopy(blankAEntry)
             teamAEntry[team] = 1
             Alist.append(teamAEntry)
-        #Compiling data into matrices
-        YMatrix.to_csv("YMatrix.csv")
+        # Compiling data into matrices
         AMatrix = pd.DataFrame(Alist)
-        AMatrix.to_csv("AMatrix.csv")
         APseudoInverse = np.linalg.pinv(AMatrix)
 
         # Multivariate Regression
@@ -193,6 +193,4 @@ def analyzeData():
         XMatrix = XMatrix[cols]
         errorData.append(getError(XMatrix, realData))
     errorDataFrame = pd.DataFrame(errorData, columns=["Average Error"])
-    errorDataFrame.to_csv("PolarError.csv")
-    XMatrix.to_csv("PolarOutput.csv")
-analyzeData()
+    return errorDataFrame

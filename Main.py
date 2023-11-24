@@ -8,8 +8,7 @@ from Robot import dockingAutoRobots, randomRobot
 from Scout import getRandomScout
 
 
-def simulateData():
-    teamsCSV = pd.read_csv("Teams.csv")
+def simulateData(teamsCSV, matchCSV):
     numTeams = 0
     robots = []
     ActualMatchesJson = []
@@ -17,7 +16,6 @@ def simulateData():
     for team in teamsCSV["Team"]:
         robots.append(randomRobot(team))
         numTeams += 1
-    matchCSV = pd.read_csv("Matches.csv")
     numMatches = 0
     for matchNumber in matchCSV["Match Number"]:
         numMatches += 1
@@ -566,10 +564,8 @@ def simulateData():
         TBAMatchesJson.append(TBAMatchJson)
 
     # Dump Data to Files
-    output = open("Output.json", "w")
-    json.dump(ActualMatchesJson, output, cls=NpEncoder)
-    TBAOutput = open("TBAOutput.json", "w")
-    json.dump(TBAMatchesJson, TBAOutput, cls=NpEncoder)
+    # output = open("Output.json", "w")
+    # TBAOutput = open("TBAOutput.json", "w")
 
     # Now Do Scouting Data
     scouts = []
@@ -598,8 +594,6 @@ def simulateData():
             data = scout.scoutMatch(game, driverStation)
             if data is not None:
                 scoutingData.append(data)
-    scoutingOutput = open("ScoutingOutput.json", "w")
-    json.dump(scoutingData, scoutingOutput, cls=NpEncoder)
+    # scoutingOutput = open("ScoutingOutput.json", "w")
+    return [ActualMatchesJson, TBAMatchesJson, scoutingData]
 
-
-simulateData()
