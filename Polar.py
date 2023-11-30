@@ -4,9 +4,9 @@ import math
 import pandas as pd
 import numpy as np
 import warnings
-from numba import jit, cuda
 
 from PolarChecker import getError
+from RemoveBadData import throwAwayBadData
 
 warnings.filterwarnings("ignore")
 
@@ -46,6 +46,8 @@ def getPieceScored(
         if spot[:4] == piece:
             retval += 1
     return retval
+
+
 # @jit(target_backend='cuda')
 
 
@@ -68,6 +70,8 @@ def analyzeData(m_data: list):
         "station1": 0,
         "station2": 0,
         "station3": 0,
+        "match_number": 0,
+        "allianceStr": "",
     }
     for row in data:
         for j in range(2):
@@ -76,9 +80,12 @@ def analyzeData(m_data: list):
             else:
                 allianceStr = "blue"
             oprMatchEntry = copy.deepcopy(blankOprEntry)
-            oprMatchEntry["station1"] = row["alliances"][allianceStr]["team_keys"][0][3:]
-            oprMatchEntry["station2"] = row["alliances"][allianceStr]["team_keys"][1][3:]
-            oprMatchEntry["station3"] = row["alliances"][allianceStr]["team_keys"][2][3:]
+            oprMatchEntry["allianceStr"] = allianceStr
+            oprMatchEntry["match_number"] = row["match_number"]
+            for k in range(3):
+                oprMatchEntry["station" + str(k + 1)] = row["alliances"][allianceStr][
+                    "team_keys"
+                ][k][3:]
             piecesScored = getPiecesScored(row, "autoCommunity", allianceStr)
             oprMatchEntry["auto_hco"] = piecesScored[0]
             oprMatchEntry["auto_hcu"] = piecesScored[1]
@@ -94,8 +101,8 @@ def analyzeData(m_data: list):
             oprMatchList.append(copy.deepcopy(oprMatchEntry))
     oprMatchDataFrame = pd.DataFrame(oprMatchList)
     teams = []
-    for j in range(3):
-        for matchTeam in oprMatchDataFrame["station" + str(j + 1)]:
+    for k in range(3):
+        for matchTeam in oprMatchDataFrame["station" + str(k + 1)]:
             exists = False
             for team in teams:
                 if matchTeam == team:
@@ -125,8 +132,7 @@ def analyzeData(m_data: list):
         # TBA Data
         YMatrix = pd.DataFrame(None, columns=YKeys)
         YMatrix = oprMatchDataFrame[YKeys]
-        matchTeamMatrix = oprMatchDataFrame[[
-            "station1", "station2", "station3"]]
+        matchTeamMatrix = oprMatchDataFrame[["station1", "station2", "station3"]]
         blankAEntry = {}
         for team in teams:
             blankAEntry[team] = 0
@@ -136,54 +142,64 @@ def analyzeData(m_data: list):
             for team in game:
                 AEntry[team] = 1
             Alist.append(AEntry)
-
         # Fitting Scouting Data to Matrices A and Y
         scoutingData = copy.deepcopy(scoutingBaseData[:j])
         teamMatchesList = copy.deepcopy(blankAEntry)
+        # Noting all Scouts
+        scouts = []
+        for entry in scoutingData:
+            if not scouts.__contains__(entry["metadata"]["scout_info"]):
+                scouts.append(entry["metadata"]["scout_info"])
+        # Throw out bad scouting data
+        scoutingData = throwAwayBadData(oprMatchDataFrame, scoutingData)
         for team in teams:
             teamMatches = []
             for entry in scoutingData:
-                for i in range(2):
-                    if i == 0:
+                for k in range(2):
+                    if k == 0:
                         allianceStr = "blue"
                     else:
                         allianceStr = "red"
-                    if entry["metadata"]["team_number"] == team:
-                        if not teamMatches.__contains__(entry["metadata"]["match_number"]):
-                            teamMatches.append(
-                                entry["metadata"]["match_number"])
+                    if type(entry["metadata"]) == dict:
+                        if entry["metadata"]["team_number"] == team:
+                            if not teamMatches.__contains__(
+                                entry["metadata"]["match_number"]
+                            ):
+                                teamMatches.append(entry["metadata"]["match_number"])
             teamMatchesList[team] = teamMatches
         teamIdx = -1
         for team in teams:
             teamIdx += 1
-            teamYEntry = [0 for i in range(len(YKeys))]
+            teamYEntry = [0 for k in range(len(YKeys))]
             for teamMatch in teamMatchesList[team]:
                 numEntries = 0
                 for entry in scoutingData:
-                    if (
-                        entry["metadata"]["team_number"] == team
-                        and entry["metadata"]["match_number"] == teamMatch
-                    ):
-                        numEntries += 1
+                    if type(entry["metadata"]) == dict:
+                        if (
+                            entry["metadata"]["team_number"] == team
+                            and entry["metadata"]["match_number"] == teamMatch
+                        ):
+                            numEntries += 1
                 for entry in scoutingData:
-                    if (
-                        entry["metadata"]["team_number"] == team
-                        and entry["metadata"]["match_number"] == teamMatch
-                    ):
-                        data = flatten_dict(entry["data"])
-                        newY = [data[key] for key in YKeys]
-                        teamYEntry = [
-                            teamYEntry[i]
-                            + (newY[i] / len(teamMatchesList[team]) / numEntries)
-                            for i in range(len(teamYEntry))
-                        ]
+                    if type(entry["metadata"]) == dict:
+                        if (
+                            entry["metadata"]["team_number"] == team
+                            and entry["metadata"]["match_number"] == teamMatch
+                        ):
+                            data = flatten_dict(entry["data"])
+                            newY = [data[key] for key in YKeys]
+                            teamYEntry = [
+                                teamYEntry[i]
+                                + (newY[i] / len(teamMatchesList[team]) / numEntries)
+                                for i in range(len(teamYEntry))
+                            ]
             YMatrix.loc[len(YMatrix)] = teamYEntry
             teamAEntry = copy.deepcopy(blankAEntry)
             teamAEntry[team] = 1
             Alist.append(teamAEntry)
         # Compiling data into matrices
         AMatrix = pd.DataFrame(Alist)
-        APseudoInverse = np.linalg.pinv(AMatrix)
+        APseudoInverse = np.linalg.pinv(AMatrix[teams])
 
         # Multivariate Regression
         XMatrix = pd.DataFrame(APseudoInverse @ YMatrix)

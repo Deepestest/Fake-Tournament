@@ -588,12 +588,13 @@ def simulateData(teamsCSV, matchCSV):
     driverStations = ["r1", "r2", "r3", "b1", "b2", "b3"]
     scoutingData = []
     for game in ActualMatchesJson:
-        for i in range(len(scouts)):
-            driverStation = random.choice(driverStations)
-            scout = scouts[i]
+        i = 0
+        for scout in scouts:
+            driverStation = driverStations[i%6]
             data = scout.scoutMatch(game, driverStation)
             if data is not None:
                 scoutingData.append(data)
+                i += 1
     # scoutingOutput = open("ScoutingOutput.json", "w")
     return [ActualMatchesJson, TBAMatchesJson, scoutingData]
 
