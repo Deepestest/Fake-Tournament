@@ -7,9 +7,16 @@ import warnings
 import pygad
 
 from PolarChecker import getError
-from RemoveBadData import BestTrustAdjustedData, TeamBasedData, getBestData, getMarkovianRatings, getTrustAdjustedData
+from RemoveBadData import (
+    BestTrustAdjustedData,
+    TeamBasedData,
+    getBestData,
+    getMarkovianRatings,
+    getTrustAdjustedData,
+)
 
 warnings.filterwarnings("ignore")
+
 
 def flatten_dict(dd, separator="_", prefix=""):
     return (
@@ -46,9 +53,6 @@ def getPieceScored(
         if spot[:4] == piece:
             retval += 1
     return retval
-
-
-# @jit(target_backend='cuda')
 
 
 def analyzeData(m_data: list):
@@ -194,7 +198,7 @@ def analyzeData(m_data: list):
         teamAEntry[team] = 1
         Alist.append(teamAEntry)
     # Compiling data into matrices
-    AMatrix = pd.DataFrame(Alist)
+    AMatrix = pd.DataFrame(Alist, columns=teams)
     APseudoInverse = np.linalg.pinv(AMatrix[teams])
     # Multivariate Regression
     XMatrix = pd.DataFrame(APseudoInverse @ YMatrix)
@@ -205,5 +209,103 @@ def analyzeData(m_data: list):
     # errorData.append(getError(XMatrix, realData))
     # errorDataFrame = pd.DataFrame(errorData, columns=["Average Error"])
     # Run Genetic Algorithm
-    nn = pygad.GA()
+    functionInputs = [AMatrix, YMatrix.loc[:, YMatrix.columns != "MatchNumber"]]
+    desiredError = 0
+
+    def fitness_func(ga_instance: pygad.GA, solution, solution_idx):
+        fitness = 0
+        error = 0.0
+        solutionMatrix = pd.DataFrame(
+            [
+                solution[x : x + len(XMatrix.columns) - 1]
+                for x in range(0, len(solution), len(XMatrix.columns) - 1)
+            ]
+        )
+
+        for i in range(len(functionInputs[0])):
+            aseries = functionInputs[0].iloc[i]
+            yseries = functionInputs[1].iloc[i]
+            matchTeams = []
+            for a, b in aseries.items():
+                if b == 1:
+                    matchTeams.append(a)
+            blankList = []
+            for a, b in yseries.items():
+                blankList.append(0)
+            solutionSeries = pd.Series(blankList, index=yseries.axes)
+            for matchTeam in matchTeams:
+                solutionSeries += pd.Series(solutionMatrix.iloc[teams.index(matchTeam)])
+            errorlist = [
+                abs(solutionSeries[i] - yseries[i]) for i in range(len(yseries - 1))
+            ]
+            for num in errorlist:
+                error += num
+        if error != 0:
+            fitness = 1 / error
+        return fitness
+
+    numGenerations = 50
+    numParentsMating = 8
+    sol_per_pop = 8
+    num_genes = len(XMatrix) * (len(XMatrix.columns) - 1)
+    fitness_batch_size = 1
+    init_range_low = 0
+    init_range_high = 15
+
+    parent_selection_type = "rank"
+    keep_parents = 1
+
+    crossover_type = "single_point"
+
+    mutation_type = "random"
+    mutation_percent_genes = 10
+
+    def on_start(ga_instance):
+        print("on_start()")
+
+    def on_fitness(ga_instance, population_fitness):
+        print("on_fitness()")
+
+    def on_parents(ga_instance, selected_parents):
+        print("on_parents()")
+
+    def on_crossover(ga_instance, offspring_crossover):
+        print("on_crossover()")
+
+    def on_mutation(ga_instance, offspring_mutation):
+        print("on_mutation()")
+
+    def on_generation(ga_instance):
+        print("on_generation()")
+
+    def on_stop(ga_instance, last_population_fitness):
+        print("on_stop()")
+
+    ga_instance = pygad.GA(
+        num_generations=numGenerations,
+        num_parents_mating=numParentsMating,
+        fitness_func=fitness_func,
+        fitness_batch_size=fitness_batch_size,
+        sol_per_pop=sol_per_pop,
+        num_genes=num_genes,
+        init_range_low=init_range_low,
+        init_range_high=init_range_high,
+        parent_selection_type=parent_selection_type,
+        keep_parents=keep_parents,
+        crossover_type=crossover_type,
+        mutation_type=mutation_type,
+        mutation_percent_genes=mutation_percent_genes,
+        on_start=on_start,
+        on_fitness=on_fitness,
+        on_parents=on_parents,
+        on_crossover=on_crossover,
+        on_mutation=on_mutation,
+        on_generation=on_generation,
+        on_stop=on_stop,
+    )
+    ga_instance.run()
+    # ga_instance.plot_fitness()
+    # solution, solution_fitness, solution_idx = ga_instance.best_solution()
+    # print(solution_fitness)
+    # XMatrix = pd.DataFrame(solution, columns=XMatrix.columns)
     return getError(XMatrix, realData)
