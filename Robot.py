@@ -34,7 +34,7 @@ class Robot:
         self.LCOV = LCOV
         self.LCU = LCU
         self.LCUV = LCUV
-        self.deathRate = deathRate
+        self.deathRate = 0
         self.team = team
         self.autos = autos
         rand = random.randint(0, 19)

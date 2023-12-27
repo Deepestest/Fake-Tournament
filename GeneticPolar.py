@@ -4,12 +4,12 @@ import math
 import pandas as pd
 import numpy as np
 import warnings
+import pygad
 
 from PolarChecker import getError
 from RemoveBadData import BestTrustAdjustedData, TeamBasedData, getBestData, getMarkovianRatings, getTrustAdjustedData
 
 warnings.filterwarnings("ignore")
-
 
 def flatten_dict(dd, separator="_", prefix=""):
     return (
@@ -204,4 +204,6 @@ def analyzeData(m_data: list):
     XMatrix = XMatrix[cols]
     # errorData.append(getError(XMatrix, realData))
     # errorDataFrame = pd.DataFrame(errorData, columns=["Average Error"])
+    # Run Genetic Algorithm
+    nn = pygad.GA()
     return getError(XMatrix, realData)

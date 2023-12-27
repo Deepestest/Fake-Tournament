@@ -597,4 +597,3 @@ def simulateData(teamsCSV, matchCSV):
                 i += 1
     # scoutingOutput = open("ScoutingOutput.json", "w")
     return [ActualMatchesJson, TBAMatchesJson, scoutingData]
-

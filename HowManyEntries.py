@@ -15,6 +15,7 @@ def RunOnce(val):
     polarError = analyzeData(simulateData(teamsCSV, matchCSV))
     for j in range(len(polarError)):
         if abs(polarError["Average Error"][j]-polarError["Average Error"].tail(1).item()) < 0.005:
+            print ("Finished Simulating Tournament", val)
             return [j*10, polarError["Average Error"][j], polarError["Average Error"][0]]
 
 
